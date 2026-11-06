@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Eliminar cuenta y datos · MUR</title>
+<meta name="description" content="Cómo eliminar tu cuenta y tus datos en la app MUR de KorvusDev. How to delete your account · Com eliminar el compte · Comment supprimer votre compte.">
+<meta name="theme-color" content="#0a0e14">
+<style>
+:root{--bg:#0a0e14;--bg2:#10161f;--card:#141b26;--line:#222c3a;--tx:#e8edf4;--mut:#93a1b5;--ac:#5eead4;--ac2:#a78bfa;--r:16px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:radial-gradient(1200px 600px at 80% -10%,#1b2a3f55,transparent),var(--bg);color:var(--tx);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;min-height:100vh}
+a{color:var(--ac);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+header.top{position:sticky;top:0;z-index:5;background:#0a0e14cc;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+.brand{font-weight:800;letter-spacing:.2px;color:var(--tx)}.brand span{color:var(--ac)}
+nav a{color:var(--mut);margin-left:16px;font-size:14px}nav a:hover{color:var(--tx);text-decoration:none}
+h1{font-size:clamp(28px,6vw,44px);line-height:1.15;margin:.2em 0}
+h2{font-size:22px;margin:2.2em 0 .6em;padding-bottom:.35em;border-bottom:1px solid var(--line)}
+h3{font-size:17px;margin:1.6em 0 .4em;color:var(--ac)}
+p,li{color:#cfd8e5}ul{padding-left:1.2em}li{margin:.3em 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;border:1px solid var(--line);background:var(--bg2);color:var(--tx);font-weight:600;font-size:15px}
+.btn:hover{border-color:var(--ac);text-decoration:none}.btn.p{background:var(--ac);color:#04221d;border-color:var(--ac)}
+.btn svg{width:18px;height:18px;fill:currentColor}
+.muted{color:var(--mut)}.small{font-size:14px}
+footer{margin-top:64px;padding:28px 0 40px;border-top:1px solid var(--line);color:var(--mut);font-size:14px}
+table{width:100%;border-collapse:collapse;font-size:14.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}th{background:var(--bg2);color:var(--tx)}td{color:#cfd8e5}
+
+.doc{padding:36px 0 0}.langs{display:flex;gap:8px;margin:18px 0 6px}
+.langs button{font:inherit;font-weight:600;font-size:14px;padding:7px 16px;border-radius:999px;border:1px solid var(--line);background:var(--bg2);color:var(--mut);cursor:pointer}
+.langs button[aria-pressed="true"]{background:var(--ac);color:#04221d;border-color:var(--ac)}
+html.js section.lang{display:none}html.js section.lang.on{display:block}
+.meta{color:var(--mut);font-size:14px}
+.note{border-left:3px solid var(--ac2);background:#a78bfa12;padding:12px 16px;border-radius:0 12px 12px 0;margin:16px 0}
+.langs{flex-wrap:wrap}
+</style></head><body>
+<header class="top"><div class="wrap"><a class="brand" href="../../">Korvus<span>Dev</span></a><nav><a href="../privacy/" data-i="{&quot;en&quot;: &quot;Privacy&quot;, &quot;ca&quot;: &quot;Privadesa&quot;, &quot;fr&quot;: &quot;Confidentialité&quot;}">Privacidad</a><a href="../terms/" data-i="{&quot;en&quot;: &quot;Terms&quot;, &quot;ca&quot;: &quot;Termes&quot;, &quot;fr&quot;: &quot;Conditions&quot;}">Términos</a></nav></div></header>
+<main class="wrap doc">
+<h1 data-i="{&quot;en&quot;: &quot;MUR · Delete account and data&quot;, &quot;ca&quot;: &quot;MUR · Eliminar el compte i les dades&quot;, &quot;fr&quot;: &quot;MUR · Supprimer le compte et les données&quot;}">MUR · Eliminar cuenta y datos</h1>
+<p class="meta" data-i="{&quot;en&quot;: &quot;App: &lt;b&gt;MUR – Mobilitat Urbana i Rodalies&lt;/b&gt; · Developer: KorvusDev · Updated: 5 November 2026&quot;, &quot;ca&quot;: &quot;App: &lt;b&gt;MUR – Mobilitat Urbana i Rodalies&lt;/b&gt; · Desenvolupador: KorvusDev · Actualitzat: 5 de novembre de 2026&quot;, &quot;fr&quot;: &quot;App : &lt;b&gt;MUR – Mobilitat Urbana i Rodalies&lt;/b&gt; · Développeur : KorvusDev · Mis à jour : 5 novembre 2026&quot;}">App: <b>MUR – Mobilitat Urbana i Rodalies</b> · Desarrollador: KorvusDev · Actualizado: 5 de noviembre de 2026</p>
+<div class="langs" role="group" aria-label="Idioma / Language / Llengua / Langue">
+    <button type="button" data-l="es" aria-pressed="true">Español</button>
+    <button type="button" data-l="en" aria-pressed="false">English</button>
+    <button type="button" data-l="ca" aria-pressed="false">Català</button>
+    <button type="button" data-l="fr" aria-pressed="false">Français</button>
+  </div>
+
+<section class="lang on" id="es" lang="es">
+<p>En MUR la cuenta de Google es opcional y solo sirve para ligar Mur Premium a tu cuenta. Aquí te explico cómo pedir que se eliminen tu cuenta y los datos asociados.</p>
+<h2>Opción 1: desde la app (inmediato)</h2>
+<ol>
+<li>Abre <b>MUR</b> y pulsa el botón de la <b>estrella</b> (Mur Premium), junto a Ajustes.</li>
+<li>Ve a <b>Cuenta de Google</b>.</li>
+<li>Pulsa <b>Eliminar cuenta</b> y confirma.</li>
+</ol>
+<h2>Opción 2: por correo</h2>
+<p>Escribe a <a href="mailto:contactaconangel@gmail.com?subject=Eliminar%20cuenta%20MUR">contactaconangel@gmail.com</a> con el asunto «Eliminar cuenta MUR» desde el correo de la cuenta de Google que usaste. Atenderé la solicitud en un máximo de 30 días.</p>
+<h2>Qué se elimina</h2>
+<ul>
+<li>Tu cuenta en el servidor de MUR: el identificador de cuenta, el estado de la suscripción vinculada y los días de códigos canjeados.</li>
+<li>La sesión iniciada en tu móvil, y tu correo, nombre y foto de Google guardados en la app.</li>
+</ul>
+<h2>Qué se conserva y durante cuánto tiempo</h2>
+<ul>
+<li><b>Suscripción de Google Play:</b> eliminar la cuenta <b>no la cancela</b>. Cancélala en Google Play → Pagos y suscripciones. Google conserva el historial de compras según sus propias políticas.</li>
+<li><b>Registros técnicos de Cloudflare</b> (por ejemplo, la IP de las peticiones): los gestiona Cloudflare según su política, fuera de mi control.</li>
+<li><b>Datos locales de la app</b> (favoritos, ajustes, caché): se quedan en tu móvil hasta que borres los datos de la app o la desinstales.</li>
+<li>No guardo copias adicionales de los datos de cuenta una vez eliminada.</li>
+</ul>
+<div class="note">Más detalles en la <a href="../privacy/">política de privacidad de MUR</a>.</div>
+</section>
+
+<section class="lang" id="en" lang="en">
+<p>In MUR a Google account is optional and only used to link Mur Premium to your account. This page explains how to request deletion of your account and associated data.</p>
+<h2>Option 1: in the app (immediate)</h2>
+<ol>
+<li>Open <b>MUR</b> and tap the <b>star</b> button (Mur Premium), next to Settings.</li>
+<li>Go to <b>Google account</b>.</li>
+<li>Tap <b>Delete account</b> and confirm.</li>
+</ol>
+<h2>Option 2: by email</h2>
+<p>Write to <a href="mailto:contactaconangel@gmail.com?subject=Delete%20MUR%20account">contactaconangel@gmail.com</a> with the subject "Delete MUR account" from the email of the Google account you used. I will handle the request within 30 days at most.</p>
+<h2>What is deleted</h2>
+<ul>
+<li>Your account on the MUR server: the account identifier, the linked subscription status and redeemed code days.</li>
+<li>The signed-in session on your phone, and your Google email, name and photo stored in the app.</li>
+</ul>
+<h2>What is kept and for how long</h2>
+<ul>
+<li><b>Google Play subscription:</b> deleting the account <b>does not cancel it</b>. Cancel it in Google Play → Payments &amp; subscriptions. Google keeps purchase history under its own policies.</li>
+<li><b>Cloudflare technical logs</b> (for example request IPs): managed by Cloudflare under its policy, outside my control.</li>
+<li><b>Local app data</b> (favourites, settings, cache): stays on your phone until you clear the app's data or uninstall it.</li>
+<li>I keep no additional copies of account data once deleted.</li>
+</ul>
+<div class="note">More details in the <a href="../privacy/">MUR privacy policy</a>.</div>
+</section>
+<section class="lang" id="ca" lang="ca">
+<p>A MUR el compte de Google és opcional i només serveix per lligar Mur Premium al vostre compte. Aquí us explico com demanar que s'eliminin el vostre compte i les dades associades.</p>
+<h2>Opció 1: des de l'app (immediat)</h2>
+<ol>
+<li>Obriu <b>MUR</b> i premeu el botó de l'<b>estrella</b> (Mur Premium), al costat d'Ajustos.</li>
+<li>Aneu a <b>Compte de Google</b>.</li>
+<li>Premeu <b>Elimina el compte</b> i confirmeu.</li>
+</ol>
+<h2>Opció 2: per correu</h2>
+<p>Escriviu a <a href="mailto:contactaconangel@gmail.com?subject=Eliminar%20compte%20MUR">contactaconangel@gmail.com</a> amb l'assumpte «Eliminar compte MUR» des del correu del compte de Google que heu usat. Atendré la sol·licitud en un màxim de 30 dies.</p>
+<h2>Què s'elimina</h2>
+<ul>
+<li>El vostre compte al servidor de MUR: l'identificador de compte, l'estat de la subscripció vinculada i els dies de codis bescanviats.</li>
+<li>La sessió iniciada al mòbil, i el vostre correu, nom i foto de Google desats a l'app.</li>
+</ul>
+<h2>Què es conserva i durant quant de temps</h2>
+<ul>
+<li><b>Subscripció de Google Play:</b> eliminar el compte <b>no la cancel·la</b>. Cancel·leu-la a Google Play → Pagaments i subscripcions. Google conserva l'historial de compres segons les seves pròpies polítiques.</li>
+<li><b>Registres tècnics de Cloudflare</b> (per exemple, la IP de les peticions): els gestiona Cloudflare segons la seva política, fora del meu control.</li>
+<li><b>Dades locals de l'app</b> (preferits, ajustos, memòria cau): es queden al vostre mòbil fins que esborreu les dades de l'app o la desinstal·leu.</li>
+<li>No deso còpies addicionals de les dades de compte un cop eliminat.</li>
+</ul>
+<div class="note">Més detalls a la <a href="../privacy/#ca">política de privadesa de MUR</a>.</div>
+</section>
+
+<section class="lang" id="fr" lang="fr">
+<p>Dans MUR, le compte Google est facultatif et sert uniquement à lier Mur Premium à votre compte. Cette page explique comment demander la suppression de votre compte et des données associées.</p>
+<h2>Option 1 : depuis l'application (immédiat)</h2>
+<ol>
+<li>Ouvrez <b>MUR</b> et appuyez sur le bouton <b>étoile</b> (Mur Premium), à côté des Réglages.</li>
+<li>Allez dans <b>Compte Google</b>.</li>
+<li>Appuyez sur <b>Supprimer le compte</b> et confirmez.</li>
+</ol>
+<h2>Option 2 : par e-mail</h2>
+<p>Écrivez à <a href="mailto:contactaconangel@gmail.com?subject=Supprimer%20compte%20MUR">contactaconangel@gmail.com</a> avec l'objet « Supprimer compte MUR » depuis l'adresse du compte Google que vous avez utilisé. Je traiterai la demande sous 30 jours au maximum.</p>
+<h2>Ce qui est supprimé</h2>
+<ul>
+<li>Votre compte sur le serveur de MUR : l'identifiant de compte, l'état de l'abonnement lié et les jours de codes utilisés.</li>
+<li>La session ouverte sur votre téléphone, ainsi que votre e-mail, nom et photo Google enregistrés dans l'application.</li>
+</ul>
+<h2>Ce qui est conservé et pendant combien de temps</h2>
+<ul>
+<li><b>Abonnement Google Play :</b> supprimer le compte <b>ne le résilie pas</b>. Résiliez-le dans Google Play → Paiements et abonnements. Google conserve l'historique des achats selon ses propres politiques.</li>
+<li><b>Journaux techniques de Cloudflare</b> (par exemple l'IP des requêtes) : gérés par Cloudflare selon sa politique, hors de mon contrôle.</li>
+<li><b>Données locales de l'application</b> (favoris, réglages, cache) : elles restent sur votre téléphone jusqu'à ce que vous effaciez les données de l'application ou la désinstalliez.</li>
+<li>Je ne conserve aucune copie supplémentaire des données de compte une fois supprimé.</li>
+</ul>
+<div class="note">Plus de détails dans la <a href="../privacy/#fr">politique de confidentialité de MUR</a>.</div>
+</section>
+
+</main>
+<footer><div class="wrap">© KorvusDev · <a href="../terms/" data-i="{&quot;en&quot;: &quot;Terms and conditions&quot;, &quot;ca&quot;: &quot;Termes i condicions&quot;, &quot;fr&quot;: &quot;Conditions générales&quot;}">Términos y condiciones</a> · <a href="../../" data-i="{&quot;en&quot;: &quot;Home&quot;, &quot;ca&quot;: &quot;Inici&quot;, &quot;fr&quot;: &quot;Accueil&quot;}">Inicio</a></div></footer>
+<script>
+(function(){
+  var L=['es','en','ca','fr'],d=document.documentElement,T={"es": "Eliminar cuenta y datos · MUR", "en": "Delete account and data · MUR", "ca": "Eliminar el compte i les dades · MUR", "fr": "Supprimer le compte et les données · MUR"};d.classList.add('js');
+  var btns=document.querySelectorAll('.langs button'),I=document.querySelectorAll('[data-i]'),A=document.querySelectorAll('a[href^="../"],a[href^="./"]');
+  I.forEach(function(e){e.dataset.es=e.innerHTML});
+  A.forEach(function(a){a.dataset.h=a.getAttribute('href').split('#')[0]});
+  function set(l){
+    document.querySelectorAll('section.lang').forEach(function(s){s.classList.toggle('on',s.id===l)});
+    btns.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.l===l)});
+    I.forEach(function(e){var o=JSON.parse(e.dataset.i);e.innerHTML=l==='es'?e.dataset.es:(o[l]||e.dataset.es)});
+    A.forEach(function(a){a.setAttribute('href',a.dataset.h+'#'+l)});
+    d.lang=l;if(T[l])document.title=T[l];
+    try{history.replaceState(null,'','#'+l)}catch(e){}
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.l)})});
+  var h=(location.hash||'').replace('#','');
+  if(L.indexOf(h)<0){h='es';var n=navigator.languages||[navigator.language||'es'];
+    for(var i=0;i<n.length;i++){var p=String(n[i]).toLowerCase().slice(0,2);if(L.indexOf(p)>=0){h=p;break}}}
+  set(h);
+  var y=document.getElementById('y');if(y)y.textContent=new Date().getFullYear();
+})();
+</script>
+</body></html>

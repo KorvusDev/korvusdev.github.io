@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>KorvusDev · Desarrollador de apps y software</title>
+<meta name="description" content="Página de desarrollador de KorvusDev: MUR (app de transporte público de Cataluña), proyectos en GitHub y contacto. · Developer page · Pàgina de desenvolupador · Page développeur.">
+<meta name="theme-color" content="#0a0e14">
+<meta property="og:title" content="KorvusDev · Desarrollador">
+<meta property="og:description" content="Proyectos, apps y enlaces de KorvusDev. MUR: Rodalies, FGC, Metro, TRAM y autobuses en una sola app.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e14'/%3E%3Ctext x='50' y='68' font-size='58' font-family='sans-serif' font-weight='800' text-anchor='middle' fill='%235eead4'%3EK%3C/text%3E%3C/svg%3E">
+<style>
+:root{--bg:#0a0e14;--bg2:#10161f;--card:#141b26;--line:#222c3a;--tx:#e8edf4;--mut:#93a1b5;--ac:#5eead4;--ac2:#a78bfa;--r:16px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:radial-gradient(1200px 600px at 80% -10%,#1b2a3f55,transparent),var(--bg);color:var(--tx);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;min-height:100vh}
+a{color:var(--ac);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+header.top{position:sticky;top:0;z-index:5;background:#0a0e14cc;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+.brand{font-weight:800;letter-spacing:.2px;color:var(--tx)}.brand span{color:var(--ac)}
+nav a{color:var(--mut);margin-left:16px;font-size:14px}nav a:hover{color:var(--tx);text-decoration:none}
+h1{font-size:clamp(28px,6vw,44px);line-height:1.15;margin:.2em 0}
+h2{font-size:22px;margin:2.2em 0 .6em;padding-bottom:.35em;border-bottom:1px solid var(--line)}
+h3{font-size:17px;margin:1.6em 0 .4em;color:var(--ac)}
+p,li{color:#cfd8e5}ul{padding-left:1.2em}li{margin:.3em 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;border:1px solid var(--line);background:var(--bg2);color:var(--tx);font-weight:600;font-size:15px}
+.btn:hover{border-color:var(--ac);text-decoration:none}.btn.p{background:var(--ac);color:#04221d;border-color:var(--ac)}
+.btn svg{width:18px;height:18px;fill:currentColor}
+.muted{color:var(--mut)}.small{font-size:14px}
+footer{margin-top:64px;padding:28px 0 40px;border-top:1px solid var(--line);color:var(--mut);font-size:14px}
+table{width:100%;border-collapse:collapse;font-size:14.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}th{background:var(--bg2);color:var(--tx)}td{color:#cfd8e5}
+
+.hero{padding:64px 0 24px}
+.tag{display:inline-block;font-size:13px;color:var(--ac);border:1px solid #5eead433;background:#5eead411;padding:4px 12px;border-radius:999px;margin-bottom:12px}
+.hero p.lead{font-size:18px;max-width:620px;color:var(--mut)}
+.row{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.avatar{width:84px;height:84px;border-radius:24px;background:linear-gradient(135deg,var(--ac),var(--ac2));display:grid;place-items:center;font-size:44px;font-weight:800;color:#04121a;margin-bottom:18px}
+.feat{border-left:3px solid var(--ac);padding-left:14px;margin:6px 0}
+.proj{display:block;color:var(--tx)}.proj:hover{border-color:var(--ac);text-decoration:none}
+.proj b{display:block;margin-bottom:4px}.proj span{font-size:13px;color:var(--mut)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.chips span{font-size:13px;padding:4px 11px;border-radius:999px;background:var(--bg2);border:1px solid var(--line);color:var(--mut)}
+.mur{background:linear-gradient(160deg,#16222f,#141b26);border-color:#2a3a4d}
+.langs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}
+.langs button{font:inherit;font-weight:600;font-size:14px;padding:7px 16px;border-radius:999px;border:1px solid var(--line);background:var(--bg2);color:var(--mut);cursor:pointer}
+.langs button[aria-pressed="true"]{background:var(--ac);color:#04221d;border-color:var(--ac)}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="./">Korvus<span>Dev</span></a>
+  <nav><a href="#mur">MUR</a><a href="#hago"><span data-i="{&quot;en&quot;: &quot;What I do&quot;, &quot;ca&quot;: &quot;Què faig&quot;, &quot;fr&quot;: &quot;Ce que je fais&quot;}">Qué hago</span></a><a href="#proyectos"><span data-i="{&quot;en&quot;: &quot;Projects&quot;, &quot;ca&quot;: &quot;Projectes&quot;, &quot;fr&quot;: &quot;Projets&quot;}">Proyectos</span></a><a href="#contacto"><span data-i="{&quot;en&quot;: &quot;Contact&quot;, &quot;ca&quot;: &quot;Contacte&quot;, &quot;fr&quot;: &quot;Contact&quot;}">Contacto</span></a></nav>
+</div></header>
+
+<main class="wrap">
+  <section class="hero">
+    <div class="langs" role="group" aria-label="Idioma / Language / Llengua / Langue">
+      <button type="button" data-l="es" aria-pressed="true">Español</button>
+      <button type="button" data-l="en" aria-pressed="false">English</button>
+      <button type="button" data-l="ca" aria-pressed="false">Català</button>
+      <button type="button" data-l="fr" aria-pressed="false">Français</button>
+    </div>
+    <div class="avatar" aria-hidden="true">K</div>
+    <span class="tag"><span data-i="{&quot;en&quot;: &quot;Independent developer · Android and web&quot;, &quot;ca&quot;: &quot;Desenvolupador independent · Android i web&quot;, &quot;fr&quot;: &quot;Développeur indépendant · Android et web&quot;}">Desarrollador independiente · Android y web</span></span>
+    <h1><span data-i="{&quot;en&quot;: &quot;Hi, I&#x27;m &quot;, &quot;ca&quot;: &quot;Hola, sóc &quot;, &quot;fr&quot;: &quot;Salut, je suis &quot;}">Hola, soy </span><span style="color:var(--ac)">KorvusDev</span></h1>
+    <p class="lead"><span data-i="{&quot;en&quot;: &quot;I build apps and tools: Android apps, websites, bots and mods. My first big project is &lt;b&gt;MUR&lt;/b&gt;, an app that brings together public transport in Catalonia.&quot;, &quot;ca&quot;: &quot;Desenvolupo apps i eines: aplicacions Android, webs, bots i mods. El meu primer gran projecte és &lt;b&gt;MUR&lt;/b&gt;, una app que reuneix el transport públic de Catalunya.&quot;, &quot;fr&quot;: &quot;Je développe des applications et des outils : applications Android, sites web, bots et mods. Mon premier grand projet est &lt;b&gt;MUR&lt;/b&gt;, une application qui réunit les transports publics de Catalogne.&quot;}">Desarrollo apps y herramientas: aplicaciones Android, webs, bots y mods. Mi primer gran proyecto es <b>MUR</b>, una app que reúne el transporte público de Cataluña.</span></p>
+    <div class="row">
+      <a class="btn p" href="https://github.com/KorvusDev" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg>GitHub</a>
+      <a class="btn" href="https://www.youtube.com/@KorvusDev" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg>YouTube</a>
+      <a class="btn" href="https://x.com/KorvusDev" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18.2 2h3.3l-7.2 8.3L22.8 22h-6.6l-5.2-6.8L5 22H1.7l7.7-8.8L1.3 2H8l4.7 6.2L18.2 2zm-1.2 18h1.8L7.1 3.9H5.2L17 20z"/></svg>X (Twitter)</a>
+      <a class="btn" href="mailto:contactaconangel@gmail.com">✉ <span data-i="{&quot;en&quot;: &quot;Contact&quot;, &quot;ca&quot;: &quot;Contacte&quot;, &quot;fr&quot;: &quot;Contact&quot;}">Contacto</span></a>
+    </div>
+  </section>
+
+  <section id="hago">
+    <h2><span data-i="{&quot;en&quot;: &quot;What I do&quot;, &quot;ca&quot;: &quot;Què faig&quot;, &quot;fr&quot;: &quot;Ce que je fais&quot;}">Qué hago</span></h2>
+    <div class="grid">
+      <div class="card"><b><span data-i="{&quot;en&quot;: &quot;Android apps&quot;, &quot;ca&quot;: &quot;Apps Android&quot;, &quot;fr&quot;: &quot;Applications Android&quot;}">Apps Android</span></b><p class="muted small" style="margin-bottom:0"><span data-i="{&quot;en&quot;: &quot;Interfaces with Kotlin and Jetpack Compose, maps, widgets, notifications and Google Play subscriptions.&quot;, &quot;ca&quot;: &quot;Interfícies amb Kotlin i Jetpack Compose, mapes, widgets, notificacions i subscripcions amb Google Play.&quot;, &quot;fr&quot;: &quot;Interfaces avec Kotlin et Jetpack Compose, cartes, widgets, notifications et abonnements Google Play.&quot;}">Interfaces con Kotlin y Jetpack Compose, mapas, widgets, notificaciones y suscripciones con Google Play.</span></p></div>
+      <div class="card"><b><span data-i="{&quot;en&quot;: &quot;Services and APIs&quot;, &quot;ca&quot;: &quot;Serveis i APIs&quot;, &quot;fr&quot;: &quot;Services et API&quot;}">Servicios y APIs</span></b><p class="muted small" style="margin-bottom:0"><span data-i="{&quot;en&quot;: &quot;Lightweight servers on Cloudflare Workers that collect and serve real-time data.&quot;, &quot;ca&quot;: &quot;Servidors lleugers amb Cloudflare Workers que reuneixen i reparteixen dades en temps real.&quot;, &quot;fr&quot;: &quot;Serveurs légers sur Cloudflare Workers qui collectent et distribuent des données en temps réel.&quot;}">Servidores ligeros con Cloudflare Workers que reúnen y reparten datos en tiempo real.</span></p></div>
+      <div class="card"><b><span data-i="{&quot;en&quot;: &quot;Websites and tools&quot;, &quot;ca&quot;: &quot;Webs i eines&quot;, &quot;fr&quot;: &quot;Sites web et outils&quot;}">Webs y herramientas</span></b><p class="muted small" style="margin-bottom:0"><span data-i="{&quot;en&quot;: &quot;Pages and utilities with HTML, CSS and JavaScript, plus Python scripts.&quot;, &quot;ca&quot;: &quot;Pàgines i utilitats amb HTML, CSS i JavaScript, i scripts en Python.&quot;, &quot;fr&quot;: &quot;Pages et utilitaires en HTML, CSS et JavaScript, et scripts Python.&quot;}">Páginas y utilidades con HTML, CSS y JavaScript, y scripts en Python.</span></p></div>
+      <div class="card"><b><span data-i="{&quot;en&quot;: &quot;Bots, mods and games&quot;, &quot;ca&quot;: &quot;Bots, mods i jocs&quot;, &quot;fr&quot;: &quot;Bots, mods et jeux&quot;}">Bots, mods y juegos</span></b><p class="muted small" style="margin-bottom:0"><span data-i="{&quot;en&quot;: &quot;Discord bots, FNF mod templates and C# experiments.&quot;, &quot;ca&quot;: &quot;Bots de Discord, plantilles de mods de FNF i experiments amb C#.&quot;, &quot;fr&quot;: &quot;Bots Discord, modèles de mods FNF et expériences en C#.&quot;}">Bots de Discord, plantillas de mods de FNF y experimentos con C#.</span></p></div>
+    </div>
+    <div class="chips"><span>Kotlin</span><span>Jetpack Compose</span><span>Python</span><span>C#</span><span>HTML / CSS / JS</span><span>Cloudflare Workers</span><span>MapLibre</span><span>Google Play Billing</span></div>
+  </section>
+
+  <section id="mur">
+    <h2><span data-i="{&quot;en&quot;: &quot;Main project · MUR&quot;, &quot;ca&quot;: &quot;Projecte principal · MUR&quot;, &quot;fr&quot;: &quot;Projet principal · MUR&quot;}">Proyecto principal · MUR</span></h2>
+    <div class="card mur">
+      <p style="margin-top:0"><span data-i="{&quot;en&quot;: &quot;My first big project (and, for now, the only one): &lt;b&gt;MUR – Mobilitat Urbana i Rodalies&lt;/b&gt;, an Android app that brings Catalonia&#x27;s public transport together in one place. Built for quick lookups with real-time data.&quot;, &quot;ca&quot;: &quot;El meu primer gran projecte (i, de moment, l&#x27;únic): &lt;b&gt;MUR – Mobilitat Urbana i Rodalies&lt;/b&gt;, una app per a Android que reuneix el transport públic de Catalunya en un sol lloc. Pensada per consultar ràpid i amb dades en temps real.&quot;, &quot;fr&quot;: &quot;Mon premier grand projet (et, pour l&#x27;instant, le seul) : &lt;b&gt;MUR – Mobilitat Urbana i Rodalies&lt;/b&gt;, une application Android qui réunit les transports publics de Catalogne en un seul endroit. Conçue pour consulter rapidement, avec des données en temps réel.&quot;}">Mi primer gran proyecto (y, de momento, el único): <b>MUR – Mobilitat Urbana i Rodalies</b>, una app para Android que reúne el transporte público de Cataluña en un solo sitio. Pensada para consultar rápido y con datos en tiempo real.</span></p>
+      <div class="chips"><span>Rodalies</span><span>FGC</span><span>Metro TMB</span><span>TRAM</span><span>Autobuses</span><span>Android 8.0+</span><span>ca · es · en · fr</span></div>
+      <div class="grid" style="margin-top:14px">
+        <div class="feat"><b><span data-i="{&quot;en&quot;: &quot;Timetables and stations&quot;, &quot;ca&quot;: &quot;Horaris i estacions&quot;, &quot;fr&quot;: &quot;Horaires et gares&quot;}">Horarios y estaciones</span></b><br><span class="muted small"><span data-i="{&quot;en&quot;: &quot;Departures by station or line, favourites and a journey finder with the nearest station.&quot;, &quot;ca&quot;: &quot;Sortides per estació o línia, preferits i cercador de trajectes amb l&#x27;estació més propera.&quot;, &quot;fr&quot;: &quot;Départs par gare ou ligne, favoris et recherche d&#x27;itinéraires avec la gare la plus proche.&quot;}">Salidas por estación o línea, favoritos y buscador de trayectos con la estación más cercana.</span></span></div>
+        <div class="feat"><b><span data-i="{&quot;en&quot;: &quot;Geotren&quot;, &quot;ca&quot;: &quot;Geotren&quot;, &quot;fr&quot;: &quot;Geotren&quot;}">Geotren</span></b><br><span class="muted small"><span data-i="{&quot;en&quot;: &quot;Vector map with moving trains, stops and customisable layers.&quot;, &quot;ca&quot;: &quot;Mapa vectorial amb els trens en moviment, parades i capes personalitzables.&quot;, &quot;fr&quot;: &quot;Carte vectorielle avec les trains en mouvement, les arrêts et des couches personnalisables.&quot;}">Mapa vectorial con los trenes en movimiento, paradas y capas personalizables.</span></span></div>
+        <div class="feat"><b><span data-i="{&quot;en&quot;: &quot;Incidents and alerts&quot;, &quot;ca&quot;: &quot;Incidències i avisos&quot;, &quot;fr&quot;: &quot;Incidents et alertes&quot;}">Incidencias y avisos</span></b><br><span class="muted small"><span data-i="{&quot;en&quot;: &quot;Incidents by line, operators&#x27; posts and arrival alerts when you get close.&quot;, &quot;ca&quot;: &quot;Incidències per línia, publicacions dels operadors i avisos d&#x27;arribada quan t&#x27;hi apropes.&quot;, &quot;fr&quot;: &quot;Incidents par ligne, publications des opérateurs et alertes d&#x27;arrivée quand vous approchez.&quot;}">Incidencias por línea, publicaciones de los operadores y avisos de llegada cuando te acercas.</span></span></div>
+        <div class="feat"><b><span data-i="{&quot;en&quot;: &quot;Widgets and themes&quot;, &quot;ca&quot;: &quot;Widgets i temes&quot;, &quot;fr&quot;: &quot;Widgets et thèmes&quot;}">Widgets y temas</span></b><br><span class="muted small"><span data-i="{&quot;en&quot;: &quot;A departures widget made to measure and themes inspired by each operator.&quot;, &quot;ca&quot;: &quot;Widget de properes sortides a mida i temes inspirats en cada operador.&quot;, &quot;fr&quot;: &quot;Widget des prochains départs sur mesure et thèmes inspirés de chaque opérateur.&quot;}">Widget de próximas salidas a tu medida y temas inspirados en cada operador.</span></span></div>
+        <div class="feat"><b><span data-i="{&quot;en&quot;: &quot;Statistics&quot;, &quot;ca&quot;: &quot;Estadístiques&quot;, &quot;fr&quot;: &quot;Statistiques&quot;}">Estadísticas</span></b><br><span class="muted small"><span data-i="{&quot;en&quot;: &quot;Punctuality, passenger flow and line status.&quot;, &quot;ca&quot;: &quot;Puntualitat, afluència i estat de les línies.&quot;, &quot;fr&quot;: &quot;Ponctualité, affluence et état des lignes.&quot;}">Puntualidad, afluencia y estado de las líneas.</span></span></div>
+        <div class="feat"><b><span data-i="{&quot;en&quot;: &quot;Mur Premium&quot;, &quot;ca&quot;: &quot;Mur Premium&quot;, &quot;fr&quot;: &quot;Mur Premium&quot;}">Mur Premium</span></b><br><span class="muted small"><span data-i="{&quot;en&quot;: &quot;No ads and with extras, optional and linked to your Google account.&quot;, &quot;ca&quot;: &quot;Sense anuncis i amb extres, opcional i lligat al teu compte de Google.&quot;, &quot;fr&quot;: &quot;Sans publicités et avec des extras, facultatif et lié à votre compte Google.&quot;}">Sin anuncios y con extras, opcional y ligado a tu cuenta de Google.</span></span></div>
+      </div>
+      <div class="row">
+        <a class="btn p" href="./mur/privacy/"><span data-i="{&quot;en&quot;: &quot;MUR privacy policy&quot;, &quot;ca&quot;: &quot;Política de privadesa de MUR&quot;, &quot;fr&quot;: &quot;Politique de confidentialité de MUR&quot;}">Política de privacidad de MUR</span></a>
+        <a class="btn" href="./mur/terms/"><span data-i="{&quot;en&quot;: &quot;MUR terms and conditions&quot;, &quot;ca&quot;: &quot;Termes i condicions de MUR&quot;, &quot;fr&quot;: &quot;Conditions générales de MUR&quot;}">Términos y condiciones de MUR</span></a>
+      </div>
+      <p class="muted small" style="margin-bottom:0"><span data-i="{&quot;en&quot;: &quot;MUR is an independent project and is not affiliated with Renfe, Rodalies de Catalunya, FGC, TMB, TRAM or any other operator; it uses their open, public data.&quot;, &quot;ca&quot;: &quot;MUR és un projecte independent i no està afiliat a Renfe, Rodalies de Catalunya, FGC, TMB, TRAM ni a cap altre operador; usa les seves dades obertes i públiques.&quot;, &quot;fr&quot;: &quot;MUR est un projet indépendant et n&#x27;est affilié ni à Renfe, ni à Rodalies de Catalunya, FGC, TMB, TRAM, ni à aucun autre opérateur ; il utilise leurs données ouvertes et publiques.&quot;}">MUR es un proyecto independiente y no está afiliado a Renfe, Rodalies de Catalunya, FGC, TMB, TRAM ni a ningún otro operador; usa sus datos abiertos y públicos.</span></p>
+    </div>
+  </section>
+
+  <section id="proyectos">
+    <h2><span data-i="{&quot;en&quot;: &quot;Projects on GitHub&quot;, &quot;ca&quot;: &quot;Projectes a GitHub&quot;, &quot;fr&quot;: &quot;Projets sur GitHub&quot;}">Proyectos en GitHub</span></h2>
+    <div class="grid">
+      <a class="card proj" href="https://github.com/KorvusDev/VendettaPlugin" target="_blank" rel="noopener"><b>VendettaPlugin</b><span><span data-i="{&quot;en&quot;: &quot;Plugin · public repository&quot;, &quot;ca&quot;: &quot;Plugin · repositori públic&quot;, &quot;fr&quot;: &quot;Plugin · dépôt public&quot;}">Plugin · repositorio público</span></span></a>
+      <a class="card proj" href="https://github.com/KorvusDev/FNF-Mod-Template" target="_blank" rel="noopener"><b>FNF-Mod-Template</b><span><span data-i="{&quot;en&quot;: &quot;Template for FNF mods&quot;, &quot;ca&quot;: &quot;Plantilla per a mods de FNF&quot;, &quot;fr&quot;: &quot;Modèle pour mods FNF&quot;}">Plantilla para mods de FNF</span></span></a>
+      <a class="card proj" href="https://github.com/KorvusDev/Procedural-GD" target="_blank" rel="noopener"><b>Procedural-GD</b><span>C#</span></a>
+      <a class="card proj" href="https://github.com/KorvusDev/FNF-Ascended-Data" target="_blank" rel="noopener"><b>FNF-Ascended-Data</b><span><span data-i="{&quot;en&quot;: &quot;Python · FNF Ascended data: updates and links&quot;, &quot;ca&quot;: &quot;Python · dades de FNF Ascended: actualitzacions i enllaços&quot;, &quot;fr&quot;: &quot;Python · données de FNF Ascended : mises à jour et liens&quot;}">Python · datos de FNF Ascended: actualizaciones y enlaces</span></span></a>
+      <a class="card proj" href="https://github.com/KorvusDev/zdeltafox.github.io" target="_blank" rel="noopener"><b>zdeltafox.github.io</b><span><span data-i="{&quot;en&quot;: &quot;HTML · website&quot;, &quot;ca&quot;: &quot;HTML · web&quot;, &quot;fr&quot;: &quot;HTML · site web&quot;}">HTML · web</span></span></a>
+      <a class="card proj" href="https://github.com/KorvusDev/zdeltafoxbetapage.github.io" target="_blank" rel="noopener"><b>zdeltafoxbetapage.github.io</b><span><span data-i="{&quot;en&quot;: &quot;SCSS · beta website&quot;, &quot;ca&quot;: &quot;SCSS · web beta&quot;, &quot;fr&quot;: &quot;SCSS · site web bêta&quot;}">SCSS · web beta</span></span></a>
+    </div>
+    <p style="margin-top:16px"><a href="https://github.com/KorvusDev?tab=repositories" target="_blank" rel="noopener"><span data-i="{&quot;en&quot;: &quot;See all 13 repositories →&quot;, &quot;ca&quot;: &quot;Veure els 13 repositoris →&quot;, &quot;fr&quot;: &quot;Voir les 13 dépôts →&quot;}">Ver los 13 repositorios →</span></a></p>
+  </section>
+
+  <section id="contacto">
+    <h2><span data-i="{&quot;en&quot;: &quot;Contact and links&quot;, &quot;ca&quot;: &quot;Contacte i enllaços&quot;, &quot;fr&quot;: &quot;Contact et liens&quot;}">Contacto y enlaces</span></h2>
+    <div class="grid">
+      <a class="card proj" href="mailto:contactaconangel@gmail.com"><b><span data-i="{&quot;en&quot;: &quot;Email&quot;, &quot;ca&quot;: &quot;Correu&quot;, &quot;fr&quot;: &quot;E-mail&quot;}">Correo</span></b><span>contactaconangel@gmail.com</span></a>
+      <a class="card proj" href="https://github.com/KorvusDev" target="_blank" rel="noopener"><b>GitHub</b><span>github.com/KorvusDev</span></a>
+      <a class="card proj" href="https://www.youtube.com/@KorvusDev" target="_blank" rel="noopener"><b>YouTube</b><span>@KorvusDev</span></a>
+      <a class="card proj" href="https://x.com/KorvusDev" target="_blank" rel="noopener"><b>X</b><span>@KorvusDev</span></a>
+      <a class="card proj" href="./mur/privacy/"><b><span data-i="{&quot;en&quot;: &quot;Privacy policy&quot;, &quot;ca&quot;: &quot;Política de privadesa&quot;, &quot;fr&quot;: &quot;Politique de confidentialité&quot;}">Política de privacidad</span></b><span>MUR · Android</span></a>
+      <a class="card proj" href="./mur/terms/"><b data-i="{&quot;en&quot;: &quot;Terms and conditions&quot;, &quot;ca&quot;: &quot;Termes i condicions&quot;, &quot;fr&quot;: &quot;Conditions générales&quot;}">Términos y condiciones</b><span data-i="{&quot;en&quot;: &quot;MUR · Android&quot;, &quot;ca&quot;: &quot;MUR · Android&quot;, &quot;fr&quot;: &quot;MUR · Android&quot;}">MUR · Android</span></a>
+      <a class="card proj" href="./mur/delete-account/"><b><span data-i="{&quot;en&quot;: &quot;Delete account&quot;, &quot;ca&quot;: &quot;Eliminar el compte&quot;, &quot;fr&quot;: &quot;Supprimer le compte&quot;}">Eliminar cuenta</span></b><span><span data-i="{&quot;en&quot;: &quot;MUR · account and data&quot;, &quot;ca&quot;: &quot;MUR · compte i dades&quot;, &quot;fr&quot;: &quot;MUR · compte et données&quot;}">MUR · cuenta y datos</span></span></a>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">© <span id="y">2026</span> KorvusDev · <a href="./mur/privacy/"><span data-i="{&quot;en&quot;: &quot;MUR privacy&quot;, &quot;ca&quot;: &quot;Privadesa de MUR&quot;, &quot;fr&quot;: &quot;Confidentialité de MUR&quot;}">Privacidad de MUR</span></a> · <a href="./mur/terms/" data-i="{&quot;en&quot;: &quot;Terms&quot;, &quot;ca&quot;: &quot;Termes&quot;, &quot;fr&quot;: &quot;Conditions&quot;}">Términos</a></div></footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+<script>
+(function(){
+  var L=['es','en','ca','fr'],d=document.documentElement,T={es:'KorvusDev · Desarrollador de apps y software',en:'KorvusDev · App and software developer',ca:'KorvusDev · Desenvolupador d\'apps i programari',fr:'KorvusDev · Développeur d\'applications et de logiciels'};d.classList.add('js');
+  var btns=document.querySelectorAll('.langs button'),I=document.querySelectorAll('[data-i]'),A=document.querySelectorAll('a[href^="./"]');
+  I.forEach(function(e){e.dataset.es=e.innerHTML});
+  A.forEach(function(a){a.dataset.h=a.getAttribute('href').split('#')[0]});
+  function set(l){
+    btns.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.l===l)});
+    I.forEach(function(e){var o=JSON.parse(e.dataset.i);e.innerHTML=l==='es'?e.dataset.es:(o[l]||e.dataset.es)});
+    A.forEach(function(a){a.setAttribute('href',a.dataset.h+'#'+l)});
+    d.lang=l;document.title=T[l];
+    try{history.replaceState(null,'','#'+l)}catch(e){}
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.l)})});
+  var h=(location.hash||'').replace('#','');
+  if(L.indexOf(h)<0){h='es';var n=navigator.languages||[navigator.language||'es'];
+    for(var i=0;i<n.length;i++){var p=String(n[i]).toLowerCase().slice(0,2);if(L.indexOf(p)>=0){h=p;break}}}
+  set(h);
+})();
+</script>
+</body>
+</html>
