@@ -1,1 +1,17 @@
-Introduce un dominio para generar un archivo JSON
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "cat.mur.mobilitat",
+      "sha256_cert_fingerprints": [
+        "81:6B:72:D8:5A:AA:5D:35:C3:B3:B6:0C:22:66:5D:E9:F9:B1:69:AA:E4:86:FC:5D:19:19:86:CE:DD:84:FE:7E",
+        "82:F6:42:93:E6:F2:AF:5F:75:75:11:D9:8F:9E:76:12:5B:6B:15:85:B2:6D:BE:59:47:23:03:D8:F6:33:C8:81",
+        "08:CD:ED:EA:0B:EC:9F:55:CF:63:92:55:C3:A2:EC:5A:14:BB:97:32:AF:BA:33:B4:7F:87:9A:62:F8:BA:93:20"
+      ]
+    }
+  }
+]
