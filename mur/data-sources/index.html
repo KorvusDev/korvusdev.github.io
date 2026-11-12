@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Fuentes de datos · MUR (Mobilitat Urbana i Rodalies)</title>
+<meta name="description" content="Fuentes de datos y licencias de MUR (Rodalies, FGC, TMB, TRAM, AMB, Generalitat, NAP, OpenStreetMap…). Data sources · Fonts de dades · Sources de données.">
+<meta name="theme-color" content="#0a0e14">
+<meta property="og:title" content="Fuentes de datos · MUR (Mobilitat Urbana i Rodalies)">
+<meta property="og:description" content="Fuentes de datos y licencias de MUR (Rodalies, FGC, TMB, TRAM, AMB, Generalitat, NAP, OpenStreetMap…). Data sources · Fonts de dades · Sources de données.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e14'/%3E%3Ctext x='50' y='68' font-size='58' font-family='sans-serif' font-weight='800' text-anchor='middle' fill='%235eead4'%3EK%3C/text%3E%3C/svg%3E">
+<link rel="canonical" href="https://korvusdev.github.io/mur/data-sources/">
+<style>
+:root{--bg:#0a0e14;--bg2:#10161f;--card:#141b26;--line:#222c3a;--tx:#e8edf4;--mut:#93a1b5;--ac:#5eead4;--ac2:#a78bfa;--r:16px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:radial-gradient(1200px 600px at 80% -10%,#1b2a3f55,transparent),var(--bg);color:var(--tx);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;min-height:100vh}
+a{color:var(--ac);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+header.top{position:sticky;top:0;z-index:5;background:#0a0e14cc;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+.brand{font-weight:800;letter-spacing:.2px;color:var(--tx)}.brand span{color:var(--ac)}
+nav a{color:var(--mut);margin-left:16px;font-size:14px}nav a:hover{color:var(--tx);text-decoration:none}
+h1{font-size:clamp(28px,6vw,44px);line-height:1.15;margin:.2em 0}
+h2{font-size:22px;margin:2.2em 0 .6em;padding-bottom:.35em;border-bottom:1px solid var(--line)}
+h3{font-size:17px;margin:1.6em 0 .4em;color:var(--ac)}
+p,li{color:#cfd8e5}ul{padding-left:1.2em}li{margin:.3em 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;border:1px solid var(--line);background:var(--bg2);color:var(--tx);font-weight:600;font-size:15px}
+.btn:hover{border-color:var(--ac);text-decoration:none}.btn.p{background:var(--ac);color:#04221d;border-color:var(--ac)}
+.btn svg{width:18px;height:18px;fill:currentColor}
+.muted{color:var(--mut)}.small{font-size:14px}
+footer{margin-top:64px;padding:28px 0 40px;border-top:1px solid var(--line);color:var(--mut);font-size:14px}
+table{width:100%;border-collapse:collapse;font-size:14.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}th{background:var(--bg2);color:var(--tx)}td{color:#cfd8e5}
+
+.doc{padding:36px 0 0}
+.langs{display:flex;gap:8px;margin:18px 0 6px}
+.langs button{font:inherit;font-weight:600;font-size:14px;padding:7px 16px;border-radius:999px;border:1px solid var(--line);background:var(--bg2);color:var(--mut);cursor:pointer}
+.langs button[aria-pressed="true"]{background:var(--ac);color:#04221d;border-color:var(--ac)}
+html.js section.lang{display:none}html.js section.lang.on{display:block}
+.meta{color:var(--mut);font-size:14px}
+.note{border-left:3px solid var(--ac2);background:#a78bfa12;padding:12px 16px;border-radius:0 12px 12px 0;margin:16px 0}
+.toc{columns:2;gap:24px;padding-left:1.2em;font-size:15px}@media(max-width:560px){.toc{columns:1}}
+.toc a{color:var(--tx)}
+.langs{flex-wrap:wrap}
+
+.tag{display:inline-block;font-size:13px;color:var(--ac);border:1px solid #5eead433;background:#5eead411;padding:4px 12px;border-radius:999px;margin:14px 0 6px}
+.lead{font-size:18px;max-width:640px;color:var(--mut)}
+.row{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0 6px}
+.feat{border-left:3px solid var(--ac);padding-left:14px;margin:6px 0}
+.mur{background:linear-gradient(160deg,#16222f,#141b26);border-color:#2a3a4d}
+.src-grid{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.card.src b{display:block;line-height:1.3}
+.card.src p{overflow-wrap:anywhere}
+:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="../../">Korvus<span>Dev</span></a>
+  <nav><a href="../" data-i="{&quot;en&quot;: &quot;MUR app&quot;, &quot;ca&quot;: &quot;App MUR&quot;, &quot;fr&quot;: &quot;Appli MUR&quot;}">App MUR</a><a href="../privacy/" data-i="{&quot;en&quot;: &quot;Privacy&quot;, &quot;ca&quot;: &quot;Privadesa&quot;, &quot;fr&quot;: &quot;Confidentialité&quot;}">Privacidad</a><a href="../../" data-i="{&quot;en&quot;: &quot;Home&quot;, &quot;ca&quot;: &quot;Inici&quot;, &quot;fr&quot;: &quot;Accueil&quot;}">Inicio</a></nav>
+</div></header>
+
+<main class="wrap doc">
+  <h1 data-i="{&quot;en&quot;: &quot;MUR · Data sources&quot;, &quot;ca&quot;: &quot;MUR · Fonts de dades&quot;, &quot;fr&quot;: &quot;MUR · Sources de données&quot;}">MUR · Fuentes de datos</h1>
+  <p class="meta" data-i="{&quot;en&quot;: &quot;Last updated: 12 November 2026&quot;, &quot;ca&quot;: &quot;Darrera actualització: 12 de novembre de 2026&quot;, &quot;fr&quot;: &quot;Dernière mise à jour : 12 novembre 2026&quot;}">Última actualización: 12 de noviembre de 2026</p>
+  <div class="langs" role="group" aria-label="Idioma / Language / Llengua / Langue">
+    <button type="button" data-l="es" aria-pressed="true">Español</button>
+    <button type="button" data-l="en" aria-pressed="false">English</button>
+    <button type="button" data-l="ca" aria-pressed="false">Català</button>
+    <button type="button" data-l="fr" aria-pressed="false">Français</button>
+  </div>
+
+<section class="lang on" id="s-es" lang="es">
+  <p>De dónde sale cada dato de MUR, con enlaces a las fuentes oficiales y la licencia o condiciones de cada una.</p>
+  <div class="note"><b>MUR es una app independiente.</b> MUR no pertenece a ninguna administración pública ni la representa, y no está afiliada, patrocinada ni avalada por ninguno de los organismos y empresas de esta lista. Toda la información procede de datos abiertos y públicos que ellos publican. Para datos oficiales y definitivos, consulta siempre la fuente original con los enlaces de abajo.</div>
+  <h2>Cómo se tratan</h2>
+  <p>MUR procesa y combina estos datos: calcula trayectos, retrasos y estadísticas de puntualidad, y estima la posición de los vehículos entre dos lecturas. Por eso lo que ves puede diferir de lo que publica cada operador o llegar con retraso. Los datos en tiempo real pasan por un servidor intermediario propio que los consulta a las fuentes y los reparte, para no sobrecargarlas.</p>
+  <h2>Fuentes de datos</h2>
+  <div class="grid src-grid">
+    <div class="card src"><b>Renfe Operadora · Rodalies de Catalunya</b><p class="small" style="margin:.4em 0">Horarios, posición de los trenes, retrasos y avisos (GTFS y GTFS-Realtime).</p><p class="muted small" style="margin:0 0 .4em">Licencia o condiciones: Creative Commons Reconocimiento 4.0 (CC BY 4.0), según publica el organismo.</p><p class="small" style="margin:0"><a href="https://data.renfe.com" target="_blank" rel="noopener">data.renfe.com</a></p></div>
+    <div class="card src"><b>Generalitat de Catalunya</b><p class="small" style="margin:.4em 0">Avisos e incidencias de Rodalies, noticias por línea y horarios de autobuses interurbanos.</p><p class="muted small" style="margin:0 0 .4em">Licencia o condiciones: Condiciones de reutilización de la Generalitat de Catalunya.</p><p class="small" style="margin:0"><a href="https://rodalies.gencat.cat" target="_blank" rel="noopener">rodalies.gencat.cat</a> · <a href="https://territori.gencat.cat" target="_blank" rel="noopener">territori.gencat.cat</a></p></div>
+    <div class="card src"><b>Ferrocarrils de la Generalitat de Catalunya (FGC)</b><p class="small" style="margin:.4em 0">Horarios, previsiones de paso, posición de los trenes y avisos.</p><p class="muted small" style="margin:0 0 .4em">Licencia o condiciones: Creative Commons Reconocimiento 4.0 (CC BY 4.0), según publica el organismo.</p><p class="small" style="margin:0"><a href="https://dadesobertes.fgc.cat" target="_blank" rel="noopener">dadesobertes.fgc.cat</a> · <a href="https://www.fgc.cat" target="_blank" rel="noopener">www.fgc.cat</a></p></div>
+    <div class="card src"><b>Transports Metropolitans de Barcelona (TMB)</b><p class="small" style="margin:.4em 0">Metro y autobús de Barcelona: estaciones, previsiones de paso, avisos y horarios.</p><p class="muted small" style="margin:0 0 .4em">Licencia o condiciones: Condiciones de uso de TMB Open Data.</p><p class="small" style="margin:0"><a href="https://developer.tmb.cat" target="_blank" rel="noopener">developer.tmb.cat</a></p></div>
+    <div class="card src"><b>TRAM Barcelona</b><p class="small" style="margin:.4em 0">Trambaix y Trambesòs: horarios, previsiones, posición de los tranvías y avisos.</p><p class="muted small" style="margin:0 0 .4em">Licencia o condiciones: Condiciones de reutilización de los datos abiertos de TRAM.</p><p class="small" style="margin:0"><a href="https://opendata.tram.cat" target="_blank" rel="noopener">opendata.tram.cat</a></p></div>
+    <div class="card src"><b>Àrea Metropolitana de Barcelona (AMB)</b><p class="small" style="margin:.4em 0">Previsiones de paso de los autobuses metropolitanos.</p><p class="muted small" style="margin:0 0 .4em">Licencia o condiciones: Condiciones de uso de los datos abiertos del AMB.</p><p class="small" style="margin:0"><a href="https://www.ambmobilitat.cat" target="_blank" rel="noopener">www.ambmobilitat.cat</a></p></div>
+    <div class="card src"><b>Punto de Acceso Nacional (NAP) · Ministerio de Transportes y Movilidad Sostenible</b><p class="small" style="margin:.4em 0">Horarios (GTFS) de los autobuses de Cataluña publicados por la ATM y los operadores.</p><p class="muted small" style="margin:0 0 .4em">Licencia o condiciones: Condiciones del NAP; cada conjunto de datos indica su licencia.</p><p class="small" style="margin:0"><a href="https://nap.transportes.gob.es" target="_blank" rel="noopener">nap.transportes.gob.es</a></p></div>
+    <div class="card src"><b>Ajuntament de Terrassa</b><p class="small" style="margin:.4em 0">Paradas y horarios del autobús urbano de Terrassa.</p><p class="muted small" style="margin:0 0 .4em">Licencia o condiciones: Condiciones del portal de datos abiertos de Terrassa.</p><p class="small" style="margin:0"><a href="https://opendata.terrassa.cat" target="_blank" rel="noopener">opendata.terrassa.cat</a></p></div>
+    <div class="card src"><b>aferioja.es</b><p class="small" style="margin:.4em 0">Avisos de servicio ferroviario publicados en este sitio web. No es una fuente oficial de ninguna administración.</p><p class="muted small" style="margin:0 0 .4em">Licencia o condiciones: Publicación del propio sitio.</p><p class="small" style="margin:0"><a href="https://aferioja.es" target="_blank" rel="noopener">aferioja.es</a></p></div>
+    <div class="card src"><b>X (cuentas públicas de los operadores)</b><p class="small" style="margin:.4em 0">Publicaciones públicas de las cuentas de los operadores, mostradas como incidencias. El texto y las marcas pertenecen a sus autores.</p><p class="muted small" style="margin:0 0 .4em">Licencia o condiciones: Publicaciones públicas.</p><p class="small" style="margin:0"><a href="https://x.com" target="_blank" rel="noopener">x.com</a></p></div>
+    <div class="card src"><b>OpenStreetMap</b><p class="small" style="margin:.4em 0">Cartografía, trazado de las vías y rutas a pie y por calzada (servicios de enrutado de OpenStreetMap y OSRM).</p><p class="muted small" style="margin:0 0 .4em">Licencia o condiciones: © Colaboradores de OpenStreetMap. Open Database License (ODbL).</p><p class="small" style="margin:0"><a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">www.openstreetmap.org/copyright</a></p></div>
+    <div class="card src"><b>Maptoolkit</b><p class="small" style="margin:.4em 0">Estilos del mapa vectorial.</p><p class="muted small" style="margin:0 0 .4em">Licencia o condiciones: Licencia comunitaria de Maptoolkit.</p><p class="small" style="margin:0"><a href="https://www.maptoolkit.com/copyright/" target="_blank" rel="noopener">www.maptoolkit.com/copyright/</a></p></div>
+  </div>
+  <p class="muted small" style="margin-top:22px">Los nombres, logotipos y marcas de operadores y servicios pertenecen a sus titulares y se usan solo para identificar líneas y servicios. Los mapas incluyen datos de OpenStreetMap, © colaboradores de OpenStreetMap.</p>
+  <p class="small">¿Falta una fuente o hay un dato incorrecto? Escríbeme a <a href="mailto:contactaconangel@gmail.com">contactaconangel@gmail.com</a>.</p>
+  <p><a class="btn" href="../">Volver a la página de MUR</a></p>
+</section>
+
+<section class="lang" id="s-en" lang="en">
+  <p>Where each piece of MUR’s data comes from, with links to the official sources and the licence or terms of each.</p>
+  <div class="note"><b>MUR is an independent app.</b> MUR does not belong to, or represent, any public administration, and is not affiliated with, sponsored or endorsed by any of the bodies and companies listed here. All information comes from open, public data that they publish. For official, definitive data, always check the original source using the links below.</div>
+  <h2>How it is processed</h2>
+  <p>MUR processes and combines this data: it calculates journeys, delays and punctuality statistics, and estimates vehicle positions between two readings. What you see may therefore differ from what each operator publishes, or arrive late. Real-time data goes through our own intermediary server, which queries the sources and shares the result so they are not overloaded.</p>
+  <h2>Data sources</h2>
+  <div class="grid src-grid">
+    <div class="card src"><b>Renfe Operadora · Rodalies de Catalunya</b><p class="small" style="margin:.4em 0">Timetables, train positions, delays and alerts (GTFS and GTFS-Realtime).</p><p class="muted small" style="margin:0 0 .4em">Licence or terms: Creative Commons Attribution 4.0 (CC BY 4.0), as published by the body.</p><p class="small" style="margin:0"><a href="https://data.renfe.com" target="_blank" rel="noopener">data.renfe.com</a></p></div>
+    <div class="card src"><b>Generalitat de Catalunya</b><p class="small" style="margin:.4em 0">Rodalies alerts and incidents, news by line and intercity bus timetables.</p><p class="muted small" style="margin:0 0 .4em">Licence or terms: Reuse conditions of the Generalitat de Catalunya.</p><p class="small" style="margin:0"><a href="https://rodalies.gencat.cat" target="_blank" rel="noopener">rodalies.gencat.cat</a> · <a href="https://territori.gencat.cat" target="_blank" rel="noopener">territori.gencat.cat</a></p></div>
+    <div class="card src"><b>Ferrocarrils de la Generalitat de Catalunya (FGC)</b><p class="small" style="margin:.4em 0">Timetables, arrival forecasts, train positions and alerts.</p><p class="muted small" style="margin:0 0 .4em">Licence or terms: Creative Commons Attribution 4.0 (CC BY 4.0), as published by the body.</p><p class="small" style="margin:0"><a href="https://dadesobertes.fgc.cat" target="_blank" rel="noopener">dadesobertes.fgc.cat</a> · <a href="https://www.fgc.cat" target="_blank" rel="noopener">www.fgc.cat</a></p></div>
+    <div class="card src"><b>Transports Metropolitans de Barcelona (TMB)</b><p class="small" style="margin:.4em 0">Barcelona metro and bus: stations, arrival forecasts, alerts and timetables.</p><p class="muted small" style="margin:0 0 .4em">Licence or terms: TMB Open Data terms of use.</p><p class="small" style="margin:0"><a href="https://developer.tmb.cat" target="_blank" rel="noopener">developer.tmb.cat</a></p></div>
+    <div class="card src"><b>TRAM Barcelona</b><p class="small" style="margin:.4em 0">Trambaix and Trambesòs: timetables, forecasts, tram positions and alerts.</p><p class="muted small" style="margin:0 0 .4em">Licence or terms: TRAM open data reuse conditions.</p><p class="small" style="margin:0"><a href="https://opendata.tram.cat" target="_blank" rel="noopener">opendata.tram.cat</a></p></div>
+    <div class="card src"><b>Àrea Metropolitana de Barcelona (AMB)</b><p class="small" style="margin:.4em 0">Arrival forecasts for metropolitan buses.</p><p class="muted small" style="margin:0 0 .4em">Licence or terms: AMB open data terms of use.</p><p class="small" style="margin:0"><a href="https://www.ambmobilitat.cat" target="_blank" rel="noopener">www.ambmobilitat.cat</a></p></div>
+    <div class="card src"><b>Punto de Acceso Nacional (NAP) · Ministerio de Transportes y Movilidad Sostenible</b><p class="small" style="margin:.4em 0">Timetables (GTFS) of Catalonia’s buses published by the ATM and the operators.</p><p class="muted small" style="margin:0 0 .4em">Licence or terms: NAP terms; each dataset states its own licence.</p><p class="small" style="margin:0"><a href="https://nap.transportes.gob.es" target="_blank" rel="noopener">nap.transportes.gob.es</a></p></div>
+    <div class="card src"><b>Ajuntament de Terrassa</b><p class="small" style="margin:.4em 0">Stops and timetables of Terrassa’s city buses.</p><p class="muted small" style="margin:0 0 .4em">Licence or terms: Terrassa open data portal terms.</p><p class="small" style="margin:0"><a href="https://opendata.terrassa.cat" target="_blank" rel="noopener">opendata.terrassa.cat</a></p></div>
+    <div class="card src"><b>aferioja.es</b><p class="small" style="margin:.4em 0">Rail service alerts published on this website. It is not an official source of any administration.</p><p class="muted small" style="margin:0 0 .4em">Licence or terms: Published by the site itself.</p><p class="small" style="margin:0"><a href="https://aferioja.es" target="_blank" rel="noopener">aferioja.es</a></p></div>
+    <div class="card src"><b>X (operators’ public accounts)</b><p class="small" style="margin:.4em 0">Public posts from the operators’ accounts, shown as incidents. The text and trademarks belong to their authors.</p><p class="muted small" style="margin:0 0 .4em">Licence or terms: Public posts.</p><p class="small" style="margin:0"><a href="https://x.com" target="_blank" rel="noopener">x.com</a></p></div>
+    <div class="card src"><b>OpenStreetMap</b><p class="small" style="margin:.4em 0">Mapping, track layout and walking and road routes (OpenStreetMap and OSRM routing services).</p><p class="muted small" style="margin:0 0 .4em">Licence or terms: © OpenStreetMap contributors. Open Database License (ODbL).</p><p class="small" style="margin:0"><a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">www.openstreetmap.org/copyright</a></p></div>
+    <div class="card src"><b>Maptoolkit</b><p class="small" style="margin:.4em 0">Vector map styles.</p><p class="muted small" style="margin:0 0 .4em">Licence or terms: Maptoolkit Community License.</p><p class="small" style="margin:0"><a href="https://www.maptoolkit.com/copyright/" target="_blank" rel="noopener">www.maptoolkit.com/copyright/</a></p></div>
+  </div>
+  <p class="muted small" style="margin-top:22px">The names, logos and trademarks of operators and services belong to their owners and are used only to identify lines and services. Maps include OpenStreetMap data, © OpenStreetMap contributors.</p>
+  <p class="small">Missing a source or spotted a wrong figure? Write to me at <a href="mailto:contactaconangel@gmail.com">contactaconangel@gmail.com</a>.</p>
+  <p><a class="btn" href="../">Back to the MUR page</a></p>
+</section>
+
+<section class="lang" id="s-ca" lang="ca">
+  <p>D’on surt cada dada de MUR, amb enllaços a les fonts oficials i la llicència o condicions de cadascuna.</p>
+  <div class="note"><b>MUR és una app independent.</b> MUR no pertany a cap administració pública ni la representa, i no està afiliada, patrocinada ni avalada per cap dels organismes i empreses d’aquesta llista. Tota la informació prové de dades obertes i públiques que ells publiquen. Per a dades oficials i definitives, consulta sempre la font original amb els enllaços de sota.</div>
+  <h2>Com es tracten</h2>
+  <p>MUR processa i combina aquestes dades: calcula trajectes, retards i estadístiques de puntualitat, i estima la posició dels vehicles entre dues lectures. Per això el que veus pot diferir del que publica cada operador o arribar amb retard. Les dades en temps real passen per un servidor intermediari propi que les consulta a les fonts i les reparteix, per no sobrecarregar-les.</p>
+  <h2>Fonts de dades</h2>
+  <div class="grid src-grid">
+    <div class="card src"><b>Renfe Operadora · Rodalies de Catalunya</b><p class="small" style="margin:.4em 0">Horaris, posició dels trens, retards i avisos (GTFS i GTFS-Realtime).</p><p class="muted small" style="margin:0 0 .4em">Llicència o condicions: Creative Commons Reconeixement 4.0 (CC BY 4.0), segons publica l’organisme.</p><p class="small" style="margin:0"><a href="https://data.renfe.com" target="_blank" rel="noopener">data.renfe.com</a></p></div>
+    <div class="card src"><b>Generalitat de Catalunya</b><p class="small" style="margin:.4em 0">Avisos i incidències de Rodalies, notícies per línia i horaris d’autobusos interurbans.</p><p class="muted small" style="margin:0 0 .4em">Llicència o condicions: Condicions de reutilització de la Generalitat de Catalunya.</p><p class="small" style="margin:0"><a href="https://rodalies.gencat.cat" target="_blank" rel="noopener">rodalies.gencat.cat</a> · <a href="https://territori.gencat.cat" target="_blank" rel="noopener">territori.gencat.cat</a></p></div>
+    <div class="card src"><b>Ferrocarrils de la Generalitat de Catalunya (FGC)</b><p class="small" style="margin:.4em 0">Horaris, previsions de pas, posició dels trens i avisos.</p><p class="muted small" style="margin:0 0 .4em">Llicència o condicions: Creative Commons Reconeixement 4.0 (CC BY 4.0), segons publica l’organisme.</p><p class="small" style="margin:0"><a href="https://dadesobertes.fgc.cat" target="_blank" rel="noopener">dadesobertes.fgc.cat</a> · <a href="https://www.fgc.cat" target="_blank" rel="noopener">www.fgc.cat</a></p></div>
+    <div class="card src"><b>Transports Metropolitans de Barcelona (TMB)</b><p class="small" style="margin:.4em 0">Metro i autobús de Barcelona: estacions, previsions de pas, avisos i horaris.</p><p class="muted small" style="margin:0 0 .4em">Llicència o condicions: Condicions d’ús de TMB Open Data.</p><p class="small" style="margin:0"><a href="https://developer.tmb.cat" target="_blank" rel="noopener">developer.tmb.cat</a></p></div>
+    <div class="card src"><b>TRAM Barcelona</b><p class="small" style="margin:.4em 0">Trambaix i Trambesòs: horaris, previsions, posició dels tramvies i avisos.</p><p class="muted small" style="margin:0 0 .4em">Llicència o condicions: Condicions de reutilització de les dades obertes de TRAM.</p><p class="small" style="margin:0"><a href="https://opendata.tram.cat" target="_blank" rel="noopener">opendata.tram.cat</a></p></div>
+    <div class="card src"><b>Àrea Metropolitana de Barcelona (AMB)</b><p class="small" style="margin:.4em 0">Previsions de pas dels autobusos metropolitans.</p><p class="muted small" style="margin:0 0 .4em">Llicència o condicions: Condicions d’ús de les dades obertes de l’AMB.</p><p class="small" style="margin:0"><a href="https://www.ambmobilitat.cat" target="_blank" rel="noopener">www.ambmobilitat.cat</a></p></div>
+    <div class="card src"><b>Punto de Acceso Nacional (NAP) · Ministerio de Transportes y Movilidad Sostenible</b><p class="small" style="margin:.4em 0">Horaris (GTFS) dels autobusos de Catalunya publicats per l’ATM i els operadors.</p><p class="muted small" style="margin:0 0 .4em">Llicència o condicions: Condicions del NAP; cada conjunt de dades indica la seva llicència.</p><p class="small" style="margin:0"><a href="https://nap.transportes.gob.es" target="_blank" rel="noopener">nap.transportes.gob.es</a></p></div>
+    <div class="card src"><b>Ajuntament de Terrassa</b><p class="small" style="margin:.4em 0">Parades i horaris de l’autobús urbà de Terrassa.</p><p class="muted small" style="margin:0 0 .4em">Llicència o condicions: Condicions del portal de dades obertes de Terrassa.</p><p class="small" style="margin:0"><a href="https://opendata.terrassa.cat" target="_blank" rel="noopener">opendata.terrassa.cat</a></p></div>
+    <div class="card src"><b>aferioja.es</b><p class="small" style="margin:.4em 0">Avisos de servei ferroviari publicats en aquest lloc web. No és una font oficial de cap administració.</p><p class="muted small" style="margin:0 0 .4em">Llicència o condicions: Publicació del mateix lloc.</p><p class="small" style="margin:0"><a href="https://aferioja.es" target="_blank" rel="noopener">aferioja.es</a></p></div>
+    <div class="card src"><b>X (comptes públics dels operadors)</b><p class="small" style="margin:.4em 0">Publicacions públiques dels comptes dels operadors, mostrades com a incidències. El text i les marques pertanyen als seus autors.</p><p class="muted small" style="margin:0 0 .4em">Llicència o condicions: Publicacions públiques.</p><p class="small" style="margin:0"><a href="https://x.com" target="_blank" rel="noopener">x.com</a></p></div>
+    <div class="card src"><b>OpenStreetMap</b><p class="small" style="margin:.4em 0">Cartografia, traçat de les vies i rutes a peu i per calçada (serveis d’enrutament d’OpenStreetMap i OSRM).</p><p class="muted small" style="margin:0 0 .4em">Llicència o condicions: © Col·laboradors d’OpenStreetMap. Open Database License (ODbL).</p><p class="small" style="margin:0"><a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">www.openstreetmap.org/copyright</a></p></div>
+    <div class="card src"><b>Maptoolkit</b><p class="small" style="margin:.4em 0">Estils del mapa vectorial.</p><p class="muted small" style="margin:0 0 .4em">Llicència o condicions: Llicència comunitària de Maptoolkit.</p><p class="small" style="margin:0"><a href="https://www.maptoolkit.com/copyright/" target="_blank" rel="noopener">www.maptoolkit.com/copyright/</a></p></div>
+  </div>
+  <p class="muted small" style="margin-top:22px">Els noms, logotips i marques d’operadors i serveis pertanyen als seus titulars i s’usen només per identificar línies i serveis. Els mapes inclouen dades d’OpenStreetMap, © col·laboradors d’OpenStreetMap.</p>
+  <p class="small">Falta alguna font o hi ha una dada incorrecta? Escriu-me a <a href="mailto:contactaconangel@gmail.com">contactaconangel@gmail.com</a>.</p>
+  <p><a class="btn" href="../">Tornar a la pàgina de MUR</a></p>
+</section>
+
+<section class="lang" id="s-fr" lang="fr">
+  <p>D’où vient chaque donnée de MUR, avec les liens vers les sources officielles et la licence ou les conditions de chacune.</p>
+  <div class="note"><b>MUR est une appli indépendante.</b> MUR n’appartient à aucune administration publique et ne la représente pas, et n’est affiliée, parrainée ni approuvée par aucun des organismes et entreprises de cette liste. Toutes les informations proviennent de données ouvertes et publiques qu’ils publient. Pour des données officielles et définitives, consultez toujours la source d’origine avec les liens ci-dessous.</div>
+  <h2>Comment elles sont traitées</h2>
+  <p>MUR traite et combine ces données : elle calcule des trajets, des retards et des statistiques de ponctualité, et estime la position des véhicules entre deux relevés. Ce que vous voyez peut donc différer de ce que publie chaque opérateur ou arriver en retard. Les données en temps réel passent par un serveur intermédiaire propre qui interroge les sources et les redistribue, pour ne pas les surcharger.</p>
+  <h2>Sources de données</h2>
+  <div class="grid src-grid">
+    <div class="card src"><b>Renfe Operadora · Rodalies de Catalunya</b><p class="small" style="margin:.4em 0">Horaires, position des trains, retards et avis (GTFS et GTFS-Realtime).</p><p class="muted small" style="margin:0 0 .4em">Licence ou conditions : Creative Commons Attribution 4.0 (CC BY 4.0), telle que publiée par l’organisme.</p><p class="small" style="margin:0"><a href="https://data.renfe.com" target="_blank" rel="noopener">data.renfe.com</a></p></div>
+    <div class="card src"><b>Generalitat de Catalunya</b><p class="small" style="margin:.4em 0">Avis et incidents de Rodalies, actualités par ligne et horaires des autobus interurbains.</p><p class="muted small" style="margin:0 0 .4em">Licence ou conditions : Conditions de réutilisation de la Generalitat de Catalunya.</p><p class="small" style="margin:0"><a href="https://rodalies.gencat.cat" target="_blank" rel="noopener">rodalies.gencat.cat</a> · <a href="https://territori.gencat.cat" target="_blank" rel="noopener">territori.gencat.cat</a></p></div>
+    <div class="card src"><b>Ferrocarrils de la Generalitat de Catalunya (FGC)</b><p class="small" style="margin:.4em 0">Horaires, prévisions de passage, position des trains et avis.</p><p class="muted small" style="margin:0 0 .4em">Licence ou conditions : Creative Commons Attribution 4.0 (CC BY 4.0), telle que publiée par l’organisme.</p><p class="small" style="margin:0"><a href="https://dadesobertes.fgc.cat" target="_blank" rel="noopener">dadesobertes.fgc.cat</a> · <a href="https://www.fgc.cat" target="_blank" rel="noopener">www.fgc.cat</a></p></div>
+    <div class="card src"><b>Transports Metropolitans de Barcelona (TMB)</b><p class="small" style="margin:.4em 0">Métro et bus de Barcelone : stations, prévisions de passage, avis et horaires.</p><p class="muted small" style="margin:0 0 .4em">Licence ou conditions : Conditions d’utilisation de TMB Open Data.</p><p class="small" style="margin:0"><a href="https://developer.tmb.cat" target="_blank" rel="noopener">developer.tmb.cat</a></p></div>
+    <div class="card src"><b>TRAM Barcelona</b><p class="small" style="margin:.4em 0">Trambaix et Trambesòs : horaires, prévisions, position des tramways et avis.</p><p class="muted small" style="margin:0 0 .4em">Licence ou conditions : Conditions de réutilisation des données ouvertes de TRAM.</p><p class="small" style="margin:0"><a href="https://opendata.tram.cat" target="_blank" rel="noopener">opendata.tram.cat</a></p></div>
+    <div class="card src"><b>Àrea Metropolitana de Barcelona (AMB)</b><p class="small" style="margin:.4em 0">Prévisions de passage des autobus métropolitains.</p><p class="muted small" style="margin:0 0 .4em">Licence ou conditions : Conditions d’utilisation des données ouvertes de l’AMB.</p><p class="small" style="margin:0"><a href="https://www.ambmobilitat.cat" target="_blank" rel="noopener">www.ambmobilitat.cat</a></p></div>
+    <div class="card src"><b>Punto de Acceso Nacional (NAP) · Ministerio de Transportes y Movilidad Sostenible</b><p class="small" style="margin:.4em 0">Horaires (GTFS) des autobus de Catalogne publiés par l’ATM et les opérateurs.</p><p class="muted small" style="margin:0 0 .4em">Licence ou conditions : Conditions du NAP ; chaque jeu de données indique sa licence.</p><p class="small" style="margin:0"><a href="https://nap.transportes.gob.es" target="_blank" rel="noopener">nap.transportes.gob.es</a></p></div>
+    <div class="card src"><b>Ajuntament de Terrassa</b><p class="small" style="margin:.4em 0">Arrêts et horaires des autobus urbains de Terrassa.</p><p class="muted small" style="margin:0 0 .4em">Licence ou conditions : Conditions du portail de données ouvertes de Terrassa.</p><p class="small" style="margin:0"><a href="https://opendata.terrassa.cat" target="_blank" rel="noopener">opendata.terrassa.cat</a></p></div>
+    <div class="card src"><b>aferioja.es</b><p class="small" style="margin:.4em 0">Avis de service ferroviaire publiés sur ce site web. Ce n’est la source officielle d’aucune administration.</p><p class="muted small" style="margin:0 0 .4em">Licence ou conditions : Publication du site lui-même.</p><p class="small" style="margin:0"><a href="https://aferioja.es" target="_blank" rel="noopener">aferioja.es</a></p></div>
+    <div class="card src"><b>X (comptes publics des opérateurs)</b><p class="small" style="margin:.4em 0">Publications publiques des comptes des opérateurs, affichées comme incidents. Le texte et les marques appartiennent à leurs auteurs.</p><p class="muted small" style="margin:0 0 .4em">Licence ou conditions : Publications publiques.</p><p class="small" style="margin:0"><a href="https://x.com" target="_blank" rel="noopener">x.com</a></p></div>
+    <div class="card src"><b>OpenStreetMap</b><p class="small" style="margin:.4em 0">Cartographie, tracé des voies et itinéraires à pied et par la route (services de calcul d’itinéraires d’OpenStreetMap et OSRM).</p><p class="muted small" style="margin:0 0 .4em">Licence ou conditions : © Contributeurs d’OpenStreetMap. Open Database License (ODbL).</p><p class="small" style="margin:0"><a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">www.openstreetmap.org/copyright</a></p></div>
+    <div class="card src"><b>Maptoolkit</b><p class="small" style="margin:.4em 0">Styles de la carte vectorielle.</p><p class="muted small" style="margin:0 0 .4em">Licence ou conditions : Licence communautaire de Maptoolkit.</p><p class="small" style="margin:0"><a href="https://www.maptoolkit.com/copyright/" target="_blank" rel="noopener">www.maptoolkit.com/copyright/</a></p></div>
+  </div>
+  <p class="muted small" style="margin-top:22px">Les noms, logos et marques des opérateurs et services appartiennent à leurs titulaires et ne servent qu’à identifier les lignes et services. Les cartes incluent des données d’OpenStreetMap, © contributeurs d’OpenStreetMap.</p>
+  <p class="small">Il manque une source ou une donnée est erronée ? Écrivez-moi à <a href="mailto:contactaconangel@gmail.com">contactaconangel@gmail.com</a>.</p>
+  <p><a class="btn" href="../">Retour à la page de MUR</a></p>
+</section>
+</main>
+
+<footer><div class="wrap">© <span id="y">2026</span> KorvusDev · <a href="../privacy/" data-i="{&quot;en&quot;: &quot;Privacy&quot;, &quot;ca&quot;: &quot;Privadesa&quot;, &quot;fr&quot;: &quot;Confidentialité&quot;}">Privacidad</a> · <a href="../terms/" data-i="{&quot;en&quot;: &quot;Terms and conditions&quot;, &quot;ca&quot;: &quot;Termes i condicions&quot;, &quot;fr&quot;: &quot;Conditions générales&quot;}">Términos y condiciones</a> · <a href="../data-sources/" data-i="{&quot;en&quot;: &quot;Data sources&quot;, &quot;ca&quot;: &quot;Fonts de dades&quot;, &quot;fr&quot;: &quot;Sources de données&quot;}">Fuentes de datos</a></div></footer>
+<script>
+(function(){
+  var L=['es','en','ca','fr'],d=document.documentElement,T={"es": "Fuentes de datos · MUR", "en": "Data sources · MUR", "ca": "Fonts de dades · MUR", "fr": "Sources de données · MUR"};d.classList.add('js');
+  var btns=document.querySelectorAll('.langs button'),I=document.querySelectorAll('[data-i]'),A=document.querySelectorAll('a[href^="../"],a[href^="./"]');
+  I.forEach(function(e){e.dataset.es=e.innerHTML});
+  A.forEach(function(a){a.dataset.h=a.getAttribute('href').split('#')[0]});
+  function set(l){
+    document.querySelectorAll('section.lang').forEach(function(s){s.classList.toggle('on',s.id==='s-'+l)});
+    btns.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.l===l)});
+    I.forEach(function(e){var o=JSON.parse(e.dataset.i);e.innerHTML=l==='es'?e.dataset.es:(o[l]||e.dataset.es)});
+    A.forEach(function(a){a.setAttribute('href',a.dataset.h+'#'+l)});
+    d.lang=l;if(T[l])document.title=T[l];
+    try{history.replaceState(null,'','#'+l)}catch(e){}
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.l)})});
+  var h=(location.hash||'').replace('#','');
+  if(L.indexOf(h)<0){h='es';var n=navigator.languages||[navigator.language||'es'];
+    for(var i=0;i<n.length;i++){var p=String(n[i]).toLowerCase().slice(0,2);if(L.indexOf(p)>=0){h=p;break}}}
+  set(h);
+  var y=document.getElementById('y');if(y)y.textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>MUR · Transporte público de Cataluña en tiempo real</title>
+<meta name="description" content="MUR – Mobilitat Urbana i Rodalies: Rodalies, FGC, Metro TMB, TRAM y autobuses de Cataluña en tiempo real. Android. · Real-time Catalan public transport · Transport públic en temps real · Transports publics en temps réel.">
+<meta name="theme-color" content="#0a0e14">
+<meta property="og:title" content="MUR · Transporte público de Cataluña en tiempo real">
+<meta property="og:description" content="MUR – Mobilitat Urbana i Rodalies: Rodalies, FGC, Metro TMB, TRAM y autobuses de Cataluña en tiempo real. Android. · Real-time Catalan public transport · Transport públic en temps real · Transports publics en temps réel.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e14'/%3E%3Ctext x='50' y='68' font-size='58' font-family='sans-serif' font-weight='800' text-anchor='middle' fill='%235eead4'%3EK%3C/text%3E%3C/svg%3E">
+<link rel="canonical" href="https://korvusdev.github.io/mur/">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "MobileApplication", "name": "MUR – Mobilitat Urbana i Rodalies", "operatingSystem": "Android 8.0+", "applicationCategory": "TravelApplication", "inLanguage": ["ca", "es", "en", "fr"], "installUrl": "https://play.google.com/store/apps/details?id=cat.mur.mobilitat", "url": "https://korvusdev.github.io/mur/", "author": {"@type": "Person", "name": "KorvusDev"}, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}}</script>
+<style>
+:root{--bg:#0a0e14;--bg2:#10161f;--card:#141b26;--line:#222c3a;--tx:#e8edf4;--mut:#93a1b5;--ac:#5eead4;--ac2:#a78bfa;--r:16px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:radial-gradient(1200px 600px at 80% -10%,#1b2a3f55,transparent),var(--bg);color:var(--tx);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;min-height:100vh}
+a{color:var(--ac);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+header.top{position:sticky;top:0;z-index:5;background:#0a0e14cc;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+.brand{font-weight:800;letter-spacing:.2px;color:var(--tx)}.brand span{color:var(--ac)}
+nav a{color:var(--mut);margin-left:16px;font-size:14px}nav a:hover{color:var(--tx);text-decoration:none}
+h1{font-size:clamp(28px,6vw,44px);line-height:1.15;margin:.2em 0}
+h2{font-size:22px;margin:2.2em 0 .6em;padding-bottom:.35em;border-bottom:1px solid var(--line)}
+h3{font-size:17px;margin:1.6em 0 .4em;color:var(--ac)}
+p,li{color:#cfd8e5}ul{padding-left:1.2em}li{margin:.3em 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;border:1px solid var(--line);background:var(--bg2);color:var(--tx);font-weight:600;font-size:15px}
+.btn:hover{border-color:var(--ac);text-decoration:none}.btn.p{background:var(--ac);color:#04221d;border-color:var(--ac)}
+.btn svg{width:18px;height:18px;fill:currentColor}
+.muted{color:var(--mut)}.small{font-size:14px}
+footer{margin-top:64px;padding:28px 0 40px;border-top:1px solid var(--line);color:var(--mut);font-size:14px}
+table{width:100%;border-collapse:collapse;font-size:14.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}th{background:var(--bg2);color:var(--tx)}td{color:#cfd8e5}
+
+.doc{padding:36px 0 0}
+.langs{display:flex;gap:8px;margin:18px 0 6px}
+.langs button{font:inherit;font-weight:600;font-size:14px;padding:7px 16px;border-radius:999px;border:1px solid var(--line);background:var(--bg2);color:var(--mut);cursor:pointer}
+.langs button[aria-pressed="true"]{background:var(--ac);color:#04221d;border-color:var(--ac)}
+html.js section.lang{display:none}html.js section.lang.on{display:block}
+.meta{color:var(--mut);font-size:14px}
+.note{border-left:3px solid var(--ac2);background:#a78bfa12;padding:12px 16px;border-radius:0 12px 12px 0;margin:16px 0}
+.toc{columns:2;gap:24px;padding-left:1.2em;font-size:15px}@media(max-width:560px){.toc{columns:1}}
+.toc a{color:var(--tx)}
+.langs{flex-wrap:wrap}
+
+.tag{display:inline-block;font-size:13px;color:var(--ac);border:1px solid #5eead433;background:#5eead411;padding:4px 12px;border-radius:999px;margin:14px 0 6px}
+.lead{font-size:18px;max-width:640px;color:var(--mut)}
+.row{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0 6px}
+.feat{border-left:3px solid var(--ac);padding-left:14px;margin:6px 0}
+.mur{background:linear-gradient(160deg,#16222f,#141b26);border-color:#2a3a4d}
+.src-grid{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.card.src b{display:block;line-height:1.3}
+.card.src p{overflow-wrap:anywhere}
+:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="../">Korvus<span>Dev</span></a>
+  <nav><a href="./data-sources/" data-i="{&quot;en&quot;: &quot;Data sources&quot;, &quot;ca&quot;: &quot;Fonts de dades&quot;, &quot;fr&quot;: &quot;Sources de données&quot;}">Fuentes de datos</a><a href="./privacy/" data-i="{&quot;en&quot;: &quot;Privacy&quot;, &quot;ca&quot;: &quot;Privadesa&quot;, &quot;fr&quot;: &quot;Confidentialité&quot;}">Privacidad</a><a href="../" data-i="{&quot;en&quot;: &quot;Home&quot;, &quot;ca&quot;: &quot;Inici&quot;, &quot;fr&quot;: &quot;Accueil&quot;}">Inicio</a></nav>
+</div></header>
+
+<main class="wrap doc">
+  <div class="langs" role="group" aria-label="Idioma / Language / Llengua / Langue">
+    <button type="button" data-l="es" aria-pressed="true">Español</button>
+    <button type="button" data-l="en" aria-pressed="false">English</button>
+    <button type="button" data-l="ca" aria-pressed="false">Català</button>
+    <button type="button" data-l="fr" aria-pressed="false">Français</button>
+  </div>
+
+<section class="lang on" id="s-es" lang="es">
+  <span class="tag">Android · Rodalies, FGC, Metro, TRAM y autobuses</span>
+  <h1>¿Tu tren va con retraso? Míralo antes de llegar a la estación.</h1>
+  <p class="lead">MUR – Mobilitat Urbana i Rodalies reúne el transporte público de Cataluña en una sola app: Rodalies, FGC, Metro TMB, TRAM y autobuses. Está pensada para consultar información rápidamente, con datos en tiempo real y sin complicaciones: abres la app, miras tu estación y decides si esperas, corres o cambias de plan.</p>
+  <div class="row">
+    <a class="btn p" href="https://play.google.com/store/apps/details?id=cat.mur.mobilitat" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 1.6a1.5 1.5 0 0 0-.6 1.2v18.4c0 .5.2.9.6 1.2L13.8 12 3.6 1.6zm11.2 11.2 2.9 2.9-11.5 6.6 8.6-9.5zm0-1.6L6.2 1.7l11.5 6.6-2.9 2.9zm4.1-.4-2.2-1.3-3 3 3 3 2.2-1.3c.9-.5.9-1.9 0-2.4z"/></svg>Descargar en Google Play</a>
+    <a class="btn" href="./data-sources/">Fuentes de datos</a>
+  </div>
+
+  <h2>Qué puedes hacer</h2>
+  <div class="grid">
+    <div class="feat"><b>Horarios y estaciones</b><br><span class="muted small">Consulta las próximas salidas por estación o por línea, con el retraso y la vía cuando el operador los facilita. Guarda tus estaciones, líneas y autobuses favoritos para tenerlos siempre a mano.</span></div>
+    <div class="feat"><b>Geotren</b><br><span class="muted small">Mapa vectorial con los trenes en movimiento, paradas y capas personalizables para ver solo lo que te interesa.</span></div>
+    <div class="feat"><b>Trayectos</b><br><span class="muted small">Busca trayectos, encuentra la estación más cercana y sigue la ruta a pie hasta la estación o parada.</span></div>
+    <div class="feat"><b>Incidencias y avisos</b><br><span class="muted small">Incidencias por línea y publicaciones de los operadores. Con Premium, avisos de llegada (la app te avisa solo cuando estás a menos de la distancia que elijas de la estación) y avisos de incidencias.</span></div>
+    <div class="feat"><b>Widgets y temas</b><br><span class="muted small">Widget de próximas salidas personalizable, también con tu estación más cercana, y temas inspirados en cada operador (Premium).</span></div>
+    <div class="feat"><b>Estadísticas</b><br><span class="muted small">Puntualidad, afluencia y estado de las líneas.</span></div>
+  </div>
+
+  <h2>Redes y servicios</h2>
+  <p>Rodalies de Catalunya, FGC, Metro de Barcelona (TMB), TRAM Barcelona (Trambaix y Trambesòs) y autobuses urbanos, metropolitanos e interurbanos.</p>
+  <p class="muted small">Disponible en catalán, castellano, inglés y francés.</p>
+
+  <h2>MUR Premium (opcional)</h2>
+  <div class="card mur"><p style="margin:0">Quita los anuncios y activa los avisos de llegada y de incidencias, el widget y los temas de interfaz. Puedes activarlo con una suscripción de Google Play (mensual o anual) o con un código canjeable. Si quieres, puedes vincular el Premium a tu cuenta de Google para recuperarlo cuando cambies de móvil. Iniciar sesión es opcional y puedes eliminar tu cuenta desde la propia app.</p></div>
+
+  <h2>Tu privacidad, primero</h2>
+  <ul>
+    <li>Sin analítica ni informes de errores de terceros.</li>
+    <li>No vendemos tus datos.</li>
+    <li>Los ajustes y los favoritos se quedan en tu móvil.</li>
+    <li>La ubicación solo se usa si das el permiso y se procesa en tu dispositivo: no se envía a ningún servidor nuestro.</li>
+    <li>Sin Premium, se muestran anuncios de Google AdMob, con un formulario de consentimiento en la UE y el Reino Unido.</li>
+  </ul>
+  <p class="muted small">Android 8.0 o superior. Hace falta conexión a Internet para consultar los datos en tiempo real.</p>
+
+  <div class="note"><b>Aviso importante.</b> MUR es un proyecto independiente y no está afiliado a Renfe, Rodalies de Catalunya, FGC, TMB, TRAM ni a ningún otro operador; usa sus datos abiertos y públicos. La información en tiempo real es orientativa: confirma los datos importantes con el operador. Los nombres y las marcas pertenecen a sus propietarios.</div>
+  <div class="row">
+    <a class="btn" href="./privacy/">Política de privacidad</a>
+    <a class="btn" href="./terms/">Términos y condiciones</a>
+    <a class="btn" href="./data-sources/">Fuentes de datos</a>
+    <a class="btn" href="./delete-account/">Eliminar cuenta</a>
+  </div>
+</section>
+
+<section class="lang" id="s-en" lang="en">
+  <span class="tag">Android · Rodalies, FGC, Metro, TRAM and buses</span>
+  <h1>Is your train running late? Check before you reach the station.</h1>
+  <p class="lead">MUR – Mobilitat Urbana i Rodalies brings Catalonia’s public transport together in one app: Rodalies, FGC, TMB Metro, TRAM and buses. It is built for quick lookups, with real-time data and no fuss: open the app, check your station and decide whether to wait, run or change plans.</p>
+  <div class="row">
+    <a class="btn p" href="https://play.google.com/store/apps/details?id=cat.mur.mobilitat" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 1.6a1.5 1.5 0 0 0-.6 1.2v18.4c0 .5.2.9.6 1.2L13.8 12 3.6 1.6zm11.2 11.2 2.9 2.9-11.5 6.6 8.6-9.5zm0-1.6L6.2 1.7l11.5 6.6-2.9 2.9zm4.1-.4-2.2-1.3-3 3 3 3 2.2-1.3c.9-.5.9-1.9 0-2.4z"/></svg>Get it on Google Play</a>
+    <a class="btn" href="./data-sources/">Data sources</a>
+  </div>
+
+  <h2>What you can do</h2>
+  <div class="grid">
+    <div class="feat"><b>Timetables and stations</b><br><span class="muted small">See the next departures by station or by line, with the delay and platform when the operator provides them. Save your favourite stations, lines and buses to keep them at hand.</span></div>
+    <div class="feat"><b>Geotren</b><br><span class="muted small">A vector map with trains on the move, stops and customisable layers so you only see what matters to you.</span></div>
+    <div class="feat"><b>Journeys</b><br><span class="muted small">Search journeys, find the nearest station and follow the walking route to the station or stop.</span></div>
+    <div class="feat"><b>Incidents and alerts</b><br><span class="muted small">Incidents by line and operators’ posts. With Premium, arrival alerts (the app notifies you only when you are within the distance you choose from the station) and incident alerts.</span></div>
+    <div class="feat"><b>Widgets and themes</b><br><span class="muted small">A customisable next-departures widget, also for your nearest station, and themes inspired by each operator (Premium).</span></div>
+    <div class="feat"><b>Statistics</b><br><span class="muted small">Punctuality, passenger flow and line status.</span></div>
+  </div>
+
+  <h2>Networks and services</h2>
+  <p>Rodalies de Catalunya, FGC, Barcelona Metro (TMB), TRAM Barcelona (Trambaix and Trambesòs) and urban, metropolitan and intercity buses.</p>
+  <p class="muted small">Available in Catalan, Spanish, English and French.</p>
+
+  <h2>MUR Premium (optional)</h2>
+  <div class="card mur"><p style="margin:0">Remove ads and unlock arrival and incident alerts, the widget and interface themes. You can activate it with a Google Play subscription (monthly or yearly) or with a redeemable code. If you like, you can link Premium to your Google account to get it back when you change phone. Signing in is optional and you can delete your account from within the app.</p></div>
+
+  <h2>Your privacy, first</h2>
+  <ul>
+    <li>No third-party analytics or crash reporting.</li>
+    <li>We don’t sell your data.</li>
+    <li>Settings and favourites stay on your phone.</li>
+    <li>Location is only used if you grant permission and is processed on your device: it is not sent to any server of ours.</li>
+    <li>Without Premium, Google AdMob ads are shown, with a consent form in the EU and the UK.</li>
+  </ul>
+  <p class="muted small">Android 8.0 or higher. An Internet connection is needed to get real-time data.</p>
+
+  <div class="note"><b>Important notice.</b> MUR is an independent project and is not affiliated with Renfe, Rodalies de Catalunya, FGC, TMB, TRAM or any other operator; it uses their open, public data. Real-time information is indicative: confirm important details with the operator. Names and trademarks belong to their owners.</div>
+  <div class="row">
+    <a class="btn" href="./privacy/">Privacy policy</a>
+    <a class="btn" href="./terms/">Terms and conditions</a>
+    <a class="btn" href="./data-sources/">Data sources</a>
+    <a class="btn" href="./delete-account/">Delete account</a>
+  </div>
+</section>
+
+<section class="lang" id="s-ca" lang="ca">
+  <span class="tag">Android · Rodalies, FGC, Metro, TRAM i autobusos</span>
+  <h1>El teu tren va amb retard? Mira-ho abans d’arribar a l’estació.</h1>
+  <p class="lead">MUR – Mobilitat Urbana i Rodalies reuneix el transport públic de Catalunya en una sola app: Rodalies, FGC, Metro TMB, TRAM i autobusos. Està pensada per consultar informació ràpidament, amb dades en temps real i sense complicacions: obres l’app, mires la teva estació i decideixes si esperes, corres o canvies de pla.</p>
+  <div class="row">
+    <a class="btn p" href="https://play.google.com/store/apps/details?id=cat.mur.mobilitat" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 1.6a1.5 1.5 0 0 0-.6 1.2v18.4c0 .5.2.9.6 1.2L13.8 12 3.6 1.6zm11.2 11.2 2.9 2.9-11.5 6.6 8.6-9.5zm0-1.6L6.2 1.7l11.5 6.6-2.9 2.9zm4.1-.4-2.2-1.3-3 3 3 3 2.2-1.3c.9-.5.9-1.9 0-2.4z"/></svg>Descarrega a Google Play</a>
+    <a class="btn" href="./data-sources/">Fonts de dades</a>
+  </div>
+
+  <h2>Què pots fer</h2>
+  <div class="grid">
+    <div class="feat"><b>Horaris i estacions</b><br><span class="muted small">Consulta les properes sortides per estació o per línia, amb el retard i la via quan l’operador els facilita. Desa les teves estacions, línies i autobusos preferits per tenir-los sempre a mà.</span></div>
+    <div class="feat"><b>Geotren</b><br><span class="muted small">Mapa vectorial amb els trens en moviment, parades i capes personalitzables per veure només allò que t’interessa.</span></div>
+    <div class="feat"><b>Trajectes</b><br><span class="muted small">Cerca trajectes, troba l’estació més propera i segueix la ruta a peu fins a l’estació o parada.</span></div>
+    <div class="feat"><b>Incidències i avisos</b><br><span class="muted small">Incidències per línia i publicacions dels operadors. Amb Premium, avisos d’arribada (l’app t’avisa només quan ets a menys de la distància que tu triïs de l’estació) i avisos d’incidències.</span></div>
+    <div class="feat"><b>Widgets i temes</b><br><span class="muted small">Widget de properes sortides personalitzable, també amb la teva estació més propera, i temes inspirats en cada operador (Premium).</span></div>
+    <div class="feat"><b>Estadístiques</b><br><span class="muted small">Puntualitat, afluència i estat de les línies.</span></div>
+  </div>
+
+  <h2>Xarxes i serveis</h2>
+  <p>Rodalies de Catalunya, FGC, Metro de Barcelona (TMB), TRAM Barcelona (Trambaix i Trambesòs) i autobusos urbans, metropolitans i interurbans.</p>
+  <p class="muted small">Disponible en català, castellà, anglès i francès.</p>
+
+  <h2>MUR Premium (opcional)</h2>
+  <div class="card mur"><p style="margin:0">Elimina els anuncis i activa els avisos d’arribada i d’incidències, el widget i els temes d’interfície. Pots activar-lo amb una subscripció de Google Play (mensual o anual) o amb un codi bescanviable. Si vols, pots vincular el Premium al teu compte de Google per recuperar-lo quan canviïs de mòbil. Iniciar sessió és opcional i pots eliminar el teu compte des de la mateixa app.</p></div>
+
+  <h2>La teva privacitat, primer</h2>
+  <ul>
+    <li>Sense analítica ni informes d’errors de tercers.</li>
+    <li>No venem les teves dades.</li>
+    <li>La configuració i els preferits es queden al teu mòbil.</li>
+    <li>La ubicació només s’utilitza si dones el permís i es processa al teu dispositiu: no s’envia a cap servidor nostre.</li>
+    <li>Sense Premium, es mostren anuncis de Google AdMob, amb un formulari de consentiment a la UE i al Regne Unit.</li>
+  </ul>
+  <p class="muted small">Android 8.0 o superior. Cal connexió a Internet per consultar les dades en temps real.</p>
+
+  <div class="note"><b>Avís important.</b> MUR és un projecte independent i no està afiliat a Renfe, Rodalies de Catalunya, FGC, TMB, TRAM ni a cap altre operador; utilitza les seves dades obertes i públiques. La informació en temps real és orientativa: confirma les dades importants amb l’operador. Els noms i les marques pertanyen als seus propietaris.</div>
+  <div class="row">
+    <a class="btn" href="./privacy/">Política de privadesa</a>
+    <a class="btn" href="./terms/">Termes i condicions</a>
+    <a class="btn" href="./data-sources/">Fonts de dades</a>
+    <a class="btn" href="./delete-account/">Eliminar el compte</a>
+  </div>
+</section>
+
+<section class="lang" id="s-fr" lang="fr">
+  <span class="tag">Android · Rodalies, FGC, métro, TRAM et autobus</span>
+  <h1>Votre train a du retard ? Vérifiez avant d’arriver en gare.</h1>
+  <p class="lead">MUR – Mobilitat Urbana i Rodalies réunit les transports publics de Catalogne dans une seule application : Rodalies, FGC, métro TMB, TRAM et autobus. Elle est conçue pour consulter rapidement, avec des données en temps réel et sans complications : vous ouvrez l’appli, regardez votre gare et décidez si vous attendez, courez ou changez de plan.</p>
+  <div class="row">
+    <a class="btn p" href="https://play.google.com/store/apps/details?id=cat.mur.mobilitat" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 1.6a1.5 1.5 0 0 0-.6 1.2v18.4c0 .5.2.9.6 1.2L13.8 12 3.6 1.6zm11.2 11.2 2.9 2.9-11.5 6.6 8.6-9.5zm0-1.6L6.2 1.7l11.5 6.6-2.9 2.9zm4.1-.4-2.2-1.3-3 3 3 3 2.2-1.3c.9-.5.9-1.9 0-2.4z"/></svg>Télécharger sur Google Play</a>
+    <a class="btn" href="./data-sources/">Sources de données</a>
+  </div>
+
+  <h2>Ce que vous pouvez faire</h2>
+  <div class="grid">
+    <div class="feat"><b>Horaires et gares</b><br><span class="muted small">Consultez les prochains départs par gare ou par ligne, avec le retard et la voie quand l’opérateur les fournit. Enregistrez vos gares, lignes et autobus favoris pour les avoir toujours sous la main.</span></div>
+    <div class="feat"><b>Geotren</b><br><span class="muted small">Carte vectorielle avec les trains en mouvement, les arrêts et des couches personnalisables pour ne voir que ce qui vous intéresse.</span></div>
+    <div class="feat"><b>Trajets</b><br><span class="muted small">Recherchez des trajets, trouvez la gare la plus proche et suivez l’itinéraire à pied jusqu’à la gare ou l’arrêt.</span></div>
+    <div class="feat"><b>Incidents et alertes</b><br><span class="muted small">Incidents par ligne et publications des opérateurs. Avec Premium, alertes d’arrivée (l’appli vous prévient seulement quand vous êtes à moins de la distance que vous choisissez de la gare) et alertes d’incidents.</span></div>
+    <div class="feat"><b>Widgets et thèmes</b><br><span class="muted small">Widget des prochains départs personnalisable, aussi pour votre gare la plus proche, et thèmes inspirés de chaque opérateur (Premium).</span></div>
+    <div class="feat"><b>Statistiques</b><br><span class="muted small">Ponctualité, affluence et état des lignes.</span></div>
+  </div>
+
+  <h2>Réseaux et services</h2>
+  <p>Rodalies de Catalunya, FGC, métro de Barcelone (TMB), TRAM Barcelona (Trambaix et Trambesòs) et autobus urbains, métropolitains et interurbains.</p>
+  <p class="muted small">Disponible en catalan, espagnol, anglais et français.</p>
+
+  <h2>MUR Premium (facultatif)</h2>
+  <div class="card mur"><p style="margin:0">Supprimez les publicités et activez les alertes d’arrivée et d’incidents, le widget et les thèmes d’interface. Vous pouvez l’activer avec un abonnement Google Play (mensuel ou annuel) ou avec un code échangeable. Si vous le souhaitez, vous pouvez lier Premium à votre compte Google pour le retrouver quand vous changez de téléphone. Se connecter est facultatif et vous pouvez supprimer votre compte depuis l’appli.</p></div>
+
+  <h2>Votre vie privée, d’abord</h2>
+  <ul>
+    <li>Aucune analyse ni rapport d’erreurs de tiers.</li>
+    <li>Nous ne vendons pas vos données.</li>
+    <li>Les réglages et les favoris restent sur votre téléphone.</li>
+    <li>La position n’est utilisée que si vous donnez l’autorisation et elle est traitée sur votre appareil : elle n’est envoyée à aucun serveur de notre part.</li>
+    <li>Sans Premium, des publicités Google AdMob s’affichent, avec un formulaire de consentement dans l’UE et au Royaume-Uni.</li>
+  </ul>
+  <p class="muted small">Android 8.0 ou supérieur. Une connexion Internet est nécessaire pour consulter les données en temps réel.</p>
+
+  <div class="note"><b>Avis important.</b> MUR est un projet indépendant et n’est affilié ni à Renfe, ni à Rodalies de Catalunya, FGC, TMB, TRAM, ni à aucun autre opérateur ; il utilise leurs données ouvertes et publiques. Les informations en temps réel sont indicatives : confirmez les données importantes auprès de l’opérateur. Les noms et marques appartiennent à leurs propriétaires.</div>
+  <div class="row">
+    <a class="btn" href="./privacy/">Politique de confidentialité</a>
+    <a class="btn" href="./terms/">Conditions générales</a>
+    <a class="btn" href="./data-sources/">Sources de données</a>
+    <a class="btn" href="./delete-account/">Supprimer le compte</a>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">© <span id="y">2026</span> KorvusDev · <a href="./privacy/" data-i="{&quot;en&quot;: &quot;Privacy&quot;, &quot;ca&quot;: &quot;Privadesa&quot;, &quot;fr&quot;: &quot;Confidentialité&quot;}">Privacidad</a> · <a href="./terms/" data-i="{&quot;en&quot;: &quot;Terms and conditions&quot;, &quot;ca&quot;: &quot;Termes i condicions&quot;, &quot;fr&quot;: &quot;Conditions générales&quot;}">Términos y condiciones</a> · <a href="./data-sources/" data-i="{&quot;en&quot;: &quot;Data sources&quot;, &quot;ca&quot;: &quot;Fonts de dades&quot;, &quot;fr&quot;: &quot;Sources de données&quot;}">Fuentes de datos</a></div></footer>
+<script>
+(function(){
+  var L=['es','en','ca','fr'],d=document.documentElement,T={"es": "MUR · Transporte público de Cataluña en tiempo real", "en": "MUR · Catalonia public transport in real time", "ca": "MUR · Transport públic de Catalunya en temps real", "fr": "MUR · Transports publics de Catalogne en temps réel"};d.classList.add('js');
+  var btns=document.querySelectorAll('.langs button'),I=document.querySelectorAll('[data-i]'),A=document.querySelectorAll('a[href^="../"],a[href^="./"]');
+  I.forEach(function(e){e.dataset.es=e.innerHTML});
+  A.forEach(function(a){a.dataset.h=a.getAttribute('href').split('#')[0]});
+  function set(l){
+    document.querySelectorAll('section.lang').forEach(function(s){s.classList.toggle('on',s.id==='s-'+l)});
+    btns.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.l===l)});
+    I.forEach(function(e){var o=JSON.parse(e.dataset.i);e.innerHTML=l==='es'?e.dataset.es:(o[l]||e.dataset.es)});
+    A.forEach(function(a){a.setAttribute('href',a.dataset.h+'#'+l)});
+    d.lang=l;if(T[l])document.title=T[l];
+    try{history.replaceState(null,'','#'+l)}catch(e){}
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.l)})});
+  var h=(location.hash||'').replace('#','');
+  if(L.indexOf(h)<0){h='es';var n=navigator.languages||[navigator.language||'es'];
+    for(var i=0;i<n.length;i++){var p=String(n[i]).toLowerCase().slice(0,2);if(L.indexOf(p)>=0){h=p;break}}}
+  set(h);
+  var y=document.getElementById('y');if(y)y.textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
